@@ -63,7 +63,7 @@ body {
 .top-site {
     text-decoration: none;
     color: white;
-    background: rgb(41, 36, 36);
+    background: rgb(31, 31, 31);
     padding: 15px;
     border-radius: 12px;
     text-align: center;
@@ -76,7 +76,8 @@ body {
 }
 
 .top-site:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(196, 196, 196);
+    color: black;
 }
 
 .top-site img {

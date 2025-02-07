@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/another_wallpaper.jpg"];
+    const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/guts.jpg"];
 
     function setRandomBackground() {
         const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const sites = await browser.topSites.get();
         const container = document.getElementById("top-sites");
 
+        container.innerHTML = ""; // Clear previous
+
         sites.slice(0, 8).forEach(site => {
             const link = document.createElement("a");
             link.href = site.url;
@@ -24,4 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     loadTopSites();
+
+    // 🔎 Search Bar - Redirect to default search engine
+    document.getElementById("search-bar").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
+        }
+    });
 });

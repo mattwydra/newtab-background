@@ -1,0 +1,10 @@
+@-moz-document url("about:newtab"), url("about:home"), url(about:privatebrowsing) {
+    body {
+        background: url("wallpapers/guts2.jpg") no-repeat center center fixed !important;
+        background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-attachment: fixed !important;
+	background-position-x: center !important;
+	background-position-y: bottom !important;
+    }
+}

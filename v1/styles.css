@@ -1,62 +1,32 @@
-/* General page reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background 0.3s ease-in-out;
-}
-
-/* Wrapper for the new tab page */
 #top-sites {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 900px;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
 }
 
-/* Individual top site */
 .top-site {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease-in-out;
     text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
 }
 
 .top-site:hover {
-    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .top-site img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.top-site span {
-    font-size: 16px;
-    color: #333;
-    display: block;
-}
-
-/* Background image */
-body {
-    background: url('wallpapers/guts2.jpg') no-repeat center center fixed;
-    background-size: cover;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
 }

@@ -9,18 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setRandomBackground();
 
-    let isTabActive = true;
-
-    document.addEventListener("visibilitychange", () => {
-        isTabActive = !document.hidden;
-    });
-
-    setInterval(() => {
-        if (isTabActive) {
-            setRandomBackground();
-        }
-    }, 10000);
-
     // Fetch Top Sites and display them
     async function loadTopSites() {
         const sites = await browser.topSites.get();
@@ -28,12 +16,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         container.innerHTML = ""; // Clear previous
 
-        sites.forEach(site => {
-            const siteTitle = site.title || site.url.replace(/https?:\/\/(www\.)?/, "");
+        sites.slice(0, 8).forEach(site => {
             const link = document.createElement("a");
             link.href = site.url;
             link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${siteTitle}</span>`;
+            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
             container.appendChild(link);
         });
     }
@@ -46,5 +33,4 @@ document.addEventListener("DOMContentLoaded", async () => {
             window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
         }
     });
-
 });

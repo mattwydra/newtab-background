@@ -12,7 +12,7 @@ body {
     overflow: hidden;
 }
 
-/* 🖼 Background Image */
+/* Background Image */
 .newtab-container {
     width: 100%;
     height: 100%;
@@ -22,7 +22,7 @@ body {
     justify-content: center;
 }
 
-/* 🔎 Search Bar */
+/* Search Bar */
 .search-wrapper {
     width: 60%;
     max-width: 600px;

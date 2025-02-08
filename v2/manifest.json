@@ -5,5 +5,5 @@
   "chrome_url_overrides": {"newtab": "newtab.html"},
   "description": "A Firefox new tab extension that randomly changes the background.",
   "background": {"scripts": ["newtab.js"], "persistent": false},
-  "permissions": ["activeTab", "storage", "tabs", "topSites"]
+  "permissions": ["activeTab", "storage", "tabs"]
 }

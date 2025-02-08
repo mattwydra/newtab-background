@@ -9,24 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setRandomBackground();
 
-    // Fetch Top Sites and display them
-    async function loadTopSites() {
-        const sites = await browser.topSites.get();
-        const container = document.getElementById("top-sites");
-
-        container.innerHTML = ""; // Clear previous
-
-        sites.slice(0, 8).forEach(site => {
-            const link = document.createElement("a");
-            link.href = site.url;
-            link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
-            container.appendChild(link);
-        });
-    }
-
-    loadTopSites();
-
     // 🔎 Search Bar - Redirect to default search engine
     document.getElementById("search-bar").addEventListener("keypress", function (e) {
         if (e.key === "Enter") {

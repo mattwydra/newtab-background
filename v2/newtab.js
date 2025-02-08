@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setRandomBackground();
 
+    let isTabActive = true;
+
+    document.addEventListener("visibilitychange", () => {
+        isTabActive = !document.hidden;
+    });
+
     setInterval(() => {
         if (isTabActive) {
             setRandomBackground();

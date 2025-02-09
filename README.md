@@ -34,6 +34,14 @@
 
 ## Other information:
 
+### How to use this code:
+1. Clone the repository
+2. Navigate to ```about:debugging#/runtime/this-firefox```
+3. Select 'Load Temporary Add-on...'
+4. Navigate to: <path/to/cloned/repo>/<version>
+5. Double-click the manifest.json file
+6. Crtl+t to open a new tab
+
 ### How to change the background of your firefox browser without an extension:
 Steps:
 

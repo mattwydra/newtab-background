@@ -1,5 +1,12 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/guts.jpg"];
+    const predefinedSites = [
+        { url: "https://www.google.com", title: "Google" },
+        { url: "https://www.youtube.com", title: "YouTube" },
+        { url: "https://www.reddit.com", title: "Reddit" },
+        { url: "https://www.github.com", title: "GitHub" },
+        { url: "https://www.wikipedia.org", title: "Wikipedia" }
+    ];
 
     function setRandomBackground() {
         const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
@@ -8,43 +15,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     setRandomBackground();
+    setInterval(setRandomBackground, 10000);
 
-    let isTabActive = true;
+    const topSitesContainer = document.getElementById("top-sites");
 
-    document.addEventListener("visibilitychange", () => {
-        isTabActive = !document.hidden;
+    predefinedSites.forEach(site => {
+        const link = document.createElement("a");
+        link.href = site.url;
+        link.className = "top-site";
+        link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+        topSitesContainer.appendChild(link);
     });
-
-    setInterval(() => {
-        if (isTabActive) {
-            setRandomBackground();
-        }
-    }, 10000);
-
-    // Fetch Top Sites and display them
-    async function loadTopSites() {
-        const sites = await browser.topSites.get();
-        const container = document.getElementById("top-sites");
-
-        container.innerHTML = ""; // Clear previous
-
-        sites.forEach(site => {
-            const siteTitle = site.title || site.url.replace(/https?:\/\/(www\.)?/, "");
-            const link = document.createElement("a");
-            link.href = site.url;
-            link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${siteTitle}</span>`;
-            container.appendChild(link);
-        });
-    }
-
-    loadTopSites();
-
-    // 🔎 Search Bar - Redirect to default search engine
-    document.getElementById("search-bar").addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
-        }
-    });
-
 });

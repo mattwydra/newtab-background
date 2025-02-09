@@ -1,5 +1,11 @@
 # Changing my Firefox new tab
 
+This is a repo to house my code for a future firefox extension that I'm creating. The eventual version will support significant customization for your firefox newtab window. This is a passion project, so most of the features are oriented towards things that I'm passionate about, unfortunately. However, I will include detailed descriptions on how to change the code (what to change/where) for those of you who would like to change any features! I'm currently looking into ways to simulate the newtab functionality on GitHub pages. If that's unsuccessful, then I will create video demos for each version. 
+
+**Current version: 3**
+
+---
+
 ### Phase 1: Basic Random Background on New Tab
 
 - Every time you open a new tab, a random image is selected from a folder or list.

@@ -5,7 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
         { url: "https://www.youtube.com", title: "YouTube" },
         { url: "https://www.reddit.com", title: "Reddit" },
         { url: "https://www.github.com", title: "GitHub" },
-        { url: "https://www.wikipedia.org", title: "Wikipedia" }
+        { url: "https://www.wikipedia.org", title: "Wikipedia" },
+        { url: "https://discord.com/", title: "Discord" },
+        { url: "https://github.com/mattwydra/discord_bots", title: "Bots Repo" },
+        { url: "https://mattwydra.github.io/projects/", title: "Minigames" },
+        { url: "https://mattwydra.github.io/about-me/", title: "About Me" },
+        { url: "https://mattwydra.github.io/LLM-integration/", title: "Media Recs" },
+        { url: "", title: "placeholder" },
+        { url: "", title: "placeholder" },
+        { url: "", title: "placeholder" },
+        { url: "", title: "placeholder" },
+        { url: "", title: "placeholder" },
+        { url: "", title: "placeholder" },
+
     ];
 
     function setRandomBackground() {

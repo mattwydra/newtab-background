@@ -31,3 +31,28 @@
 - (4b): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
 - (4c): Select from the most recent 3-5 anime/games (toggle buttons).
 - (4d): Automatically rotate between all images (recent anime, games, hopecore, etc.).
+
+## Other information:
+
+### How to change the background of your firefox browser without an extension:
+Steps:
+
+1. Type about:config in the address bar and set toolkit.legacyUserProfileCustomizations.stylesheets to true.
+2. Go to about:support, find Profile Directory, and open it.
+3. Create a chrome folder inside the profile directory (if it doesn't exist).
+4. Inside the chrome folder, create a file called userChrome.css.
+5. Paste the following code:
+
+```css
+@-moz-document url("about:newtab"), url("about:home"), url(about:privatebrowsing) {
+    body {
+        background: url("wallpapers/guts2.jpg") no-repeat center center fixed !important;
+        background-size: cover !important;
+	      background-repeat: no-repeat !important;
+	      background-attachment: fixed !important;
+	      background-position-x: center !important;
+	      background-position-y: bottom !important;
+    }
+}
+
+```

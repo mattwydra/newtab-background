@@ -1,4 +1,34 @@
 /* General Reset */
+@keyframes backgroundSlide {
+    0% {
+        background: #212530;
+    }
+
+    20% {
+        background: #536597;
+    }
+
+    40% {
+        background: rgb(176, 176, 238);
+    }
+
+    60% {
+        background: plum;
+    }
+
+    /* Dark blue */
+    80% {
+        background: #568a97;
+    }
+
+    /* Purple */
+    100% {
+        background: #212530;
+    }
+
+    /* Back to initial */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,8 +39,12 @@ body {
     justify-content: center;
     height: 100vh;
     background: #121212;
-    overflow: hidden;
+    /* Initial background */
+    animation: backgroundSlide 10s infinite ease-in-out;
+    /* Smooth loop */
 }
+
+
 
 /* 🖼 Background Image */
 .newtab-container {

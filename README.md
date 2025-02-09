@@ -42,6 +42,9 @@
 5. Double-click the manifest.json file
 6. Crtl+t to open a new tab
 
+### Changing the source code:
+Feel free to change the code on your end as much as you please! However, changes may require a restart of the extension. In that case, return to ```about:debugging#/runtime/this-firefox``` and select 'Reload' below the temporary extension.
+
 ### How to change the background of your firefox browser without an extension:
 Steps:
 

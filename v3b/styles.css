@@ -1,0 +1,87 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #121212;
+    overflow: hidden;
+}
+
+/* 🖼 Background Image */
+.newtab-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔎 Search Bar */
+.search-wrapper {
+    width: 60%;
+    max-width: 600px;
+    position: absolute;
+    top: 20%;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+/* ⭐ Top Sites */
+.top-sites-wrapper {
+    position: absolute;
+    top: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 80%;
+    max-width: 900px;
+}
+
+#top-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.top-site {
+    text-decoration: none;
+    color: white;
+    background: rgb(31, 31, 31);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.top-site:hover {
+    background: rgb(196, 196, 196);
+    color: black;
+}
+
+.top-site img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}

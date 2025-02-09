@@ -20,18 +20,24 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 /* 🔎 Search Bar */
 .search-wrapper {
-    width: 60%;
-    max-width: 600px;
-    position: absolute;
-    top: 20%;
+    width: 80%;
+    max-width: 850px;
+    /* Matches max-width of #top-sites */
+    display: flex;
+    justify-content: center;
+    /* Ensures the input centers */
+    margin-bottom: 20px;
+    /* Add spacing between search and top sites */
 }
 
 #search-bar {
     width: 100%;
+    /* Full width of its container */
     padding: 12px;
     font-size: 18px;
     border-radius: 8px;
@@ -42,33 +48,37 @@ body {
 
 /* ⭐ Top Sites */
 .top-sites-wrapper {
-    position: absolute;
-    top: 35%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
     width: 80%;
-    max-width: 900px;
+    /* Matches search-wrapper width */
+    max-width: 850px;
+    /* Matches search-wrapper max-width */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 equally spaced columns */
+    gap: 15px;
+    justify-items: center;
+    /* Center-align items in grid cells */
 }
+
 
 #top-sites {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
-    max-width: 600px;
+    max-width: 900px;
 }
 
 .top-site {
     text-decoration: none;
+    font-size: 14px;
     color: white;
     background: rgb(31, 31, 31);
-    padding: 15px;
+    padding: 6px;
     border-radius: 12px;
     text-align: center;
-    width: 100px;
-    height: 120px;
+    width: 70px;
+    height: 58px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -3,20 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const predefinedSites = [
         { url: "https://www.google.com", title: "Google" },
         { url: "https://www.youtube.com", title: "YouTube" },
-        { url: "https://www.reddit.com", title: "Reddit" },
+        { url: "https://www.speedtest.net/", title: "Speed Test" },
         { url: "https://www.github.com", title: "GitHub" },
-        { url: "https://www.wikipedia.org", title: "Wikipedia" },
-        { url: "https://discord.com/", title: "Discord" },
-        { url: "https://github.com/mattwydra/discord_bots", title: "Bots Repo" },
         { url: "https://mattwydra.github.io/projects/", title: "Minigames" },
         { url: "https://mattwydra.github.io/about-me/", title: "About Me" },
         { url: "https://mattwydra.github.io/LLM-integration/", title: "Media Recs" },
-        { url: "", title: "placeholder" },
-        { url: "", title: "placeholder" },
-        { url: "", title: "placeholder" },
-        { url: "", title: "placeholder" },
-        { url: "", title: "placeholder" },
-        { url: "", title: "placeholder" },
+        { url: "https://github.com/mattwydra/discord_bots", title: "Bots Repo" },
+        { url: "https://leetcode.com/", title: "LeetCode" },
+        { url: "https://neetcode.io/", title: "NeetCode" },
+        { url: "https://www.wikipedia.org", title: "Wikipedia" },
+        { url: "https://discord.com/", title: "Discord" },
+        { url: "https://mail.google.com/mail", title: "Mail" },
+        { url: "https://www.linkedin.com", title: "LinkedIn" },
+        { url: "https://codesandbox.io", title: "CodeSandbox" },
+        { url: "https://www.amazon.com", title: "Amazon" },
 
     ];
 
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         document.body.style.background = `url('${randomImage}') no-repeat center center fixed`;
         document.body.style.backgroundSize = "cover";
+        // document.body.style.animation = "backgroundSlide 10s infinite ease-in-out";
     }
 
     setRandomBackground();

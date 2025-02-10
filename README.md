@@ -18,12 +18,17 @@ This is a repo to house my code for a future firefox extension that I'm creating
 ### Phase 3: Adding in top-sites
 
 - Features top sites as commonly seen on firefox, but styled differently.
+- (3a): Display top-sites with background that changes smoothly between pastel colors.
+- (3b): Display top-sites in front of the randomly selected background (changes every 10s).
+- (3c): Display the top-sites in front of the randomly selected background, but the background change is smooth as opposed to jarring.
 
 ### Phase 4: Choice of websites
 
-- Choose between custom presets for quick access, or add your own
-- Quick access will be entertainment-focused or productivity-focused
-- Will feature a button to choose which preset
+- Choose between custom presets for quick access, or add your own.
+- Quick access will be entertainment-focused or productivity-focused.
+- Will feature a button to choose which preset.
+- (4a): Website with presets.
+- (4b): Introduce funcitonality for custom presets.
 
 ### Phase 5: Hopecore Integration
 

@@ -33,15 +33,15 @@ This is a repo to house my code for a future firefox extension that I'm creating
 ### Phase 5: Hopecore Integration
 
 - On new tab load, generate a hopecore image + quote.
-- (3b): Button to manually generate a new hopecore.
-- (3c): Auto-regenerate hopecore every 10 seconds.
+- (5b): Button to manually generate a new hopecore.
+- (5c): Auto-regenerate hopecore every 10 seconds.
 
 ### Phase 6: Deep Personalization (MAL & Game Data)
 
-- (4a): Fetch recent anime from MAL profile and use images from most recently watched shows.
-- (4b): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
-- (4c): Select from the most recent 3-5 anime/games (toggle buttons).
-- (4d): Automatically rotate between all images (recent anime, games, hopecore, etc.).
+- (6a): Fetch recent anime from MAL profile and use images from most recently watched shows.
+- (6b): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
+- (6c): Select from the most recent 3-5 anime/games (toggle buttons).
+- (6d): Automatically rotate between all images (recent anime, games, hopecore, etc.).
 
 ## Other information:
 

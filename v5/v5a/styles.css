@@ -11,35 +11,11 @@ h2 {
     margin-top: 90px;
 }
 
-#result img {
-    max-width: 80%;
-    height: auto;
-    margin-top: 14px;
-    margin-bottom: 24px;
-}
 
 #result div {
     word-wrap: break-word;
     text-align: center;
     font-weight: bold;
-}
-
-
-
-#hopecore-link {
-    display: inline-block;
-    margin-top: 50px;
-    padding: 10px 20px;
-    background-color: rosybrown;
-    color: aliceblue;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-}
-
-#hopecore-link:hover {
-    background-color: lavenderblush;
-    color: darksalmon;
 }
 
 

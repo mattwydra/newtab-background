@@ -64,9 +64,18 @@ async function generateHopecore() {
         quoteElement.style.textAlign = "center";
         quoteElement.style.fontSize = "24px";
         quoteElement.style.fontWeight = "bold";
-        quoteElement.style.color = "white";
+        quoteElement.style.color = "lavender";
         quoteElement.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.8)";
         quoteElement.style.marginTop = "20px";
+        quoteElement.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+        quoteElement.style.padding = "10px";
+        quoteElement.style.borderRadius = "5px";
+        quoteElement.style.position = "absolute";
+        quoteElement.style.top = "20px";
+        quoteElement.style.left = "50%";
+        quoteElement.style.transform = "translateX(-50%)";
+
+
         resultContainer.appendChild(quoteElement);
     } catch (error) {
         console.error("Error generating hopecore content:", error);

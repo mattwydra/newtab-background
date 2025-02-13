@@ -1,0 +1,9 @@
+{
+  "manifest_version": 2,
+  "name": "Custom New Tab",
+  "version": "1.0",
+  "chrome_url_overrides": {"newtab": "newtab.html"},
+  "description": "A Firefox new tab extension that randomly changes the background.",
+  "background": {"scripts": ["newtab.js"], "persistent": false},
+  "permissions": ["activeTab", "storage", "tabs", "topSites"]
+}

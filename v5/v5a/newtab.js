@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/guts.jpg"];
-
-    // setRandomBackground();
-    // setInterval(setRandomBackground, 10000);
-
     const topSitesContainer = document.getElementById("top-sites");
 
     const predefinedSites = [
@@ -59,17 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
-    function setRandomBackground() {
-        const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-        document.body.style.background = `url('${randomImage}') no-repeat center center fixed`;
-        document.body.style.backgroundSize = "cover";
-    }
-
-    function setBackground() {
-        document.body.style.background.src = imageUrl;
-        document.body.style.backgroundSize = "cover";
-    }
-
     function renderSites(category) {
         // const topSitesContainer = document.getElementById("top-sites");
         topSitesContainer.innerHTML = "";
@@ -114,10 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.getElementById("custom-title").value;
         if (url && title) addCustomSite(url, title);
     });
-
-    setRandomBackground();
-    setInterval(setRandomBackground, 10000);
-    renderSites("productivity"); // Default category
 });
 
 
@@ -177,7 +157,7 @@ async function generateHopecore() {
 
         // Set background image
         document.body.style.backgroundImage = `url(${imageUrl})`;
-        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundSize = "contain";
         document.body.style.backgroundPosition = "center";
         document.body.style.backgroundRepeat = "no-repeat";
 

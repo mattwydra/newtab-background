@@ -194,6 +194,12 @@ async function generateHopecore() {
     }
 }
 
+// Attach event listeners
+if (generateButton) {
+    generateButton.addEventListener("click", generateHopecore);
+} else {
+    console.error("Generate button not found!");
+}
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", generateHopecore);

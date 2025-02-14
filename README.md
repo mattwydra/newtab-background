@@ -2,7 +2,7 @@
 
 This is a repo to house my code for a future firefox extension that I'm creating. The eventual version will support significant customization for your firefox newtab window. This is a passion project, so most of the features are oriented towards things that I'm passionate about, unfortunately. However, I will include detailed descriptions on how to change the code (what to change/where) for those of you who would like to change any features! The search feature works, but I'm currently looking into ways to simulate the top sites functionality on [GitHub pages](https://mattwydra.github.io/newtab-background/). If that's unsuccessful, then I will create video demos for each version. 
 
-**Current version: 5b**
+**Current version: [5b](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**
 
 ---
 
@@ -14,7 +14,7 @@ This is a repo to house my code for a future firefox extension that I'm creating
 ### Phase 2: Background Rotation (Auto-Switch Every 10s)
 
 - [Version 2.1](https://mattwydra.github.io/newtab-background/v2/newtab.html)
-Background image changes every 10 seconds.
+- Background image changes every 10 seconds.
 - Optimization (2b): Only change if the tab is open (so it doesn't kill RAM).
 
 ### Phase 3: Adding in top-sites

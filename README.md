@@ -8,7 +8,7 @@ This is a repo to house my code for a future firefox extension that I'm creating
 
 ### Phase 1: Basic Random Background on New Tab
 
-- Every time you open a new tab, a random image is selected from a folder or list.
+- [Version 1](https://mattwydra.github.io/newtab-background/v1/newtab.html): Every time you open a new tab, a random image is selected from a folder or list.
 
 ### Phase 2: Background Rotation (Auto-Switch Every 10s)
 

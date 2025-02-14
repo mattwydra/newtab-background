@@ -1,4 +1,4 @@
-# Phase 5a
+# Phase 5b
 
 ## **Objective:**
-- **v5a**: Display a hopecore image and quote on new tab load.
+- **v5b**: Implement 'generate hopecore' button so the user can continuously generate a new hopecore background + quote combination.

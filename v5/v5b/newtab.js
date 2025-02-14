@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/guts.jpg"];
-
-    // setRandomBackground();
-    // setInterval(setRandomBackground, 10000);
 
     const topSitesContainer = document.getElementById("top-sites");
 
@@ -59,17 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
-    function setRandomBackground() {
-        const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-        document.body.style.background = `url('${randomImage}') no-repeat center center fixed`;
-        document.body.style.backgroundSize = "cover";
-    }
-
-    function setBackground() {
-        document.body.style.background.src = imageUrl;
-        document.body.style.backgroundSize = "cover";
-    }
-
     function renderSites(category) {
         // const topSitesContainer = document.getElementById("top-sites");
         topSitesContainer.innerHTML = "";
@@ -115,13 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (url && title) addCustomSite(url, title);
     });
 
-    setRandomBackground();
-    setInterval(setRandomBackground, 10000);
     renderSites("productivity"); // Default category
 });
 
 
 console.log("Script is loaded!");
+
+
+// Select the generate button
+const generateButton = document.getElementById("hopecore-link");
 
 // GitHub raw paths for images
 const regularImagePath = "https://raw.githubusercontent.com/gymney/hopecore/main/assets/hc";

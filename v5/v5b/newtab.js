@@ -99,8 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.getElementById("custom-title").value;
         if (url && title) addCustomSite(url, title);
     });
-
-    renderSites("productivity"); // Default category
 });
 
 

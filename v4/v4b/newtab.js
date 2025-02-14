@@ -112,5 +112,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setRandomBackground();
     setInterval(setRandomBackground, 10000);
-    renderSites("productivity"); // Default category
 });

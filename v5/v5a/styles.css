@@ -81,6 +81,37 @@ body {
     /* Center-align items in grid cells */
 }
 
+button {
+    margin-bottom: 20px;
+    background-color: lavender;
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 10px;
+    /* border-radius: 5px; */
+}
+
+button:hover {
+    background-color: black;
+    color: lavender;
+}
+
+#search-bar {
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+}
+
+#custom-title {
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+    padding: 6px 10px;
+}
+
+#custom-url {
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+    padding: 6px 10px;
+}
 
 #top-sites {
     display: grid;

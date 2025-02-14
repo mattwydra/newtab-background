@@ -177,7 +177,7 @@ async function generateHopecore() {
 
         // Set background image
         document.body.style.backgroundImage = `url(${imageUrl})`;
-        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundSize = "contain";
         document.body.style.backgroundPosition = "center";
         document.body.style.backgroundRepeat = "no-repeat";
 

@@ -20,9 +20,9 @@ This is a repo to house my code for a future firefox extension that I'm creating
 ### Phase 3: Adding in top-sites
 
 - Features top sites as commonly seen on firefox, but styled differently.
-- (3a): Display top-sites with background that changes smoothly between pastel colors.
-- (3b): Display top-sites in front of the randomly selected background (changes every 10s).
-- (3c): Display the top-sites in front of the randomly selected background, but the background change is smooth as opposed to jarring.
+- **[3a](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)**: Display top-sites with background that changes smoothly between pastel colors.
+- **[3b](https://mattwydra.github.io/newtab-background/v3/v3b/newtab.html)**: Display top-sites in front of the randomly selected background (changes every 10s).
+- **[3c](https://mattwydra.github.io/newtab-background/v3/v3c/newtab.html)**: Display the top-sites in front of the randomly selected background, but the background change is smooth as opposed to jarring.
 
 ### Phase 4: Choice of websites
 

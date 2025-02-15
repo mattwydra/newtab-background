@@ -18,7 +18,7 @@
 
     body[data-theme="light"] {
       background-color: lavender;
-      color: black;
+      color: plum;
     }
 
     h1 {
@@ -94,6 +94,16 @@
   </div>
 
   <script>
+    const wallpapers = ["wallpapers/guts2.jpg"];
+
+    function setRandomBackground() {
+      const backgroundImg = wallpapers[0];
+      document.body.style.background = `url('${backgroundImg}') no-repeat center center fixed`;
+      document.body.style.backgroundSize = "cover";
+    }
+
+    setRandomBackground();
+
     const themeToggle = document.getElementById("themeToggle");
 
     themeToggle.addEventListener("click", () => {

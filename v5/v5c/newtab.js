@@ -200,8 +200,9 @@ if (generateButton) {
 // Select the auto-toggle button
 const autoToggle = document.getElementById("auto-toggle");
 
-// Create toggle variable
+// Create toggle variables
 let autogen = false;
+var autoGenRefreshId;
 
 // Attach event listeners
 if (autoToggle) {
@@ -213,6 +214,7 @@ if (autoToggle) {
         }
         else {
             autoToggle.innerHTML = "auto generate: OFF";
+            clearInterval(autoGenRefreshId);
         }
     });
 } else {
@@ -220,7 +222,7 @@ if (autoToggle) {
 }
 
 async function autoGenerate() {
-    setInterval(generateHopecore, 10000);
+    autoGenRefreshId = setInterval(generateHopecore, 10000);
 }
 
 

@@ -78,18 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function addCustomSite(url, title) {
-        categories.custom.push({ url, title });
-        localStorage.setItem("customSites", JSON.stringify(categories.custom));
-        renderSites("custom");
-    }
-
-    // document.getElementById("category-buttons").addEventListener("click", (e) => {
-    //     if (e.target.tagName === "BUTTON") {
-    //         renderSites(e.target.dataset.category);
-    //     }
-    // });
-
     document.getElementById("btn-productivity").addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
             renderSites("productivity");
@@ -105,11 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
             renderSites("media");
         }
     });
-    // document.getElementById("btn-custom").addEventListener("click", (e) => {
-    //     if (e.target.tagName === "BUTTON") {
-    //         renderSites(e.target.dataset.category);
-    //     }
-    // });
 
     document.getElementById("custom-bookmarks").addEventListener("submit", (e) => {
         e.preventDefault();

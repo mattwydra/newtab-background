@@ -29,8 +29,8 @@ This is a repo to house my code for a future firefox extension that I'm creating
 - Choose between custom presets for quick access, or add your own.
 - Quick access will be entertainment-focused or productivity-focused.
 - Will feature a button to choose which preset.
-- (4a): Website with presets.
-- (4b): Introduce funcitonality for custom presets.
+- **[4a](https://mattwydra.github.io/newtab-background/v4/v4a/newtab.html)**: Website with presets.
+- **[4b](https://mattwydra.github.io/newtab-background/v4/v4b/newtab.html)**: Introduce funcitonality for custom presets.
 
 ### Phase 5: Hopecore Integration
 

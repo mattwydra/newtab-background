@@ -34,9 +34,9 @@ This is a repo to house my code for a future firefox extension that I'm creating
 
 ### Phase 5: Hopecore Integration
 
-- On new tab load, generate a hopecore image + quote.
-- (5b): Button to manually generate a new hopecore.
-- (5c): Auto-regenerate hopecore every 10 seconds.
+- **[5a](https://mattwydra.github.io/newtab-background/v5/v5a/newtab.html)**: On new tab load, generate a hopecore image + quote.
+- **[5b](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**: Button to manually generate a new hopecore.
+- **5c (coming soon)**: Auto-regenerate hopecore every 10 seconds.
 
 ### Phase 6: Deep Personalization (MAL & Game Data)
 

@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // const wallpapers = ["wallpapers/guts2.jpg", "wallpapers/guts.jpg"];
-
-    // setRandomBackground();
-    // setInterval(setRandomBackground, 10000);
-
     const topSitesContainer = document.getElementById("top-sites");
 
     const predefinedSites = [
@@ -59,17 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
-    function setRandomBackground() {
-        const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-        document.body.style.background = `url('${randomImage}') no-repeat center center fixed`;
-        document.body.style.backgroundSize = "cover";
-    }
-
-    function setBackground() {
-        document.body.style.background.src = imageUrl;
-        document.body.style.backgroundSize = "cover";
-    }
-
     function renderSites(category) {
         // const topSitesContainer = document.getElementById("top-sites");
         topSitesContainer.innerHTML = "";
@@ -114,9 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.getElementById("custom-title").value;
         if (url && title) addCustomSite(url, title);
     });
-
-    setRandomBackground();
-    setInterval(setRandomBackground, 10000);
 });
 
 
@@ -204,6 +185,42 @@ async function generateHopecore() {
     } catch (error) {
         console.error("Error generating hopecore content:", error);
     }
+}
+
+// Select the generate button
+const generateButton = document.getElementById("hopecore-link");
+
+// Attach event listeners
+if (generateButton) {
+    generateButton.addEventListener("click", generateHopecore);
+} else {
+    console.error("Generate button not found!");
+}
+
+// Select the auto-toggle button
+const autoToggle = document.getElementById("auto-toggle");
+
+// Create toggle variable
+let autogen = false;
+
+// Attach event listeners
+if (autoToggle) {
+    autoToggle.addEventListener("click", () => {
+        autogen = !autogen;
+        if (autogen) {
+            autoGenerate();
+            autoToggle.innerHTML = "auto generate: ON";
+        }
+        else {
+            autoToggle.innerHTML = "auto generate: OFF";
+        }
+    });
+} else {
+    console.error("Generate button not found!");
+}
+
+async function autoGenerate() {
+    setInterval(generateHopecore, 10000);
 }
 
 

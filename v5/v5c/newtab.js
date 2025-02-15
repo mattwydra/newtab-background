@@ -78,6 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
         renderSites("custom");
     }
 
+    document.getElementById("btn-default").addEventListener("click", () => {
+        topSitesContainer.innerHTML = "";
+        predefinedSites.forEach(site => {
+            const link = document.createElement("a");
+            link.href = site.url;
+            link.className = "top-site";
+            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+            topSitesContainer.appendChild(link);
+        });
+    });
     document.getElementById("btn-productivity").addEventListener("click", (e) => {
         renderSites("productivity");
     });

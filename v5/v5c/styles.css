@@ -64,13 +64,29 @@ button:hover {
     font-size: 15px;
     position: absolute;
     top: 50px;
-    right: 80px;
+    left: 80px;
 }
 
 #hopecore-link:hover {
     background-color: black;
     color: plum;
 }
+
+#auto-toggle {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    right: 80px;
+}
+
+#auto-toggle:hover {
+    background-color: black;
+    color: plum;
+}
+
 
 
 /* General Reset */

@@ -37,7 +37,10 @@ This is a repo to house my code for a future firefox extension that I'm creating
 - **[5a](https://mattwydra.github.io/newtab-background/v5/v5a/newtab.html)**: On new tab load, generate a hopecore image + quote.
 - **[5b](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**: Button to manually generate a new hopecore.
 - **[5c](https://mattwydra.github.io/newtab-background/v5/v5c/newtab.html)**: Auto-regenerate hopecore every 10 seconds.
-- **[5d] (coming soon)**: More options (hide HUD (search bar, sites, etc.), add images, add quotes, etc.)
+- **[5d] (coming soon)**: Add more sites to the presets, allow for adding/removing from presets, and will support more options:
+   - hide HUD (search bar, sites, etc.)
+   - add images (or videos/gifs, etc.)
+   - add quotes
 
 ### Phase 6: Deep Personalization (MAL & Game Data)
 

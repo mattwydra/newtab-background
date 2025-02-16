@@ -87,7 +87,20 @@ button:hover {
     color: plum;
 }
 
+#HUD-toggle {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 90px;
+    right: 80px;
+}
 
+#HUD-toggle:hover {
+    background-color: black;
+    color: plum;
+}
 
 /* General Reset */
 body {

@@ -54,6 +54,33 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
+    function renderHelper(presetNum) {
+        switch (presetNum) {
+            case 1:
+                renderSites("productivity");
+                break;
+            case 2:
+                renderSites("gaming");
+                break;
+            case 3:
+                renderSites("media");
+                break;
+            case 4:
+                renderSites("custom");
+                break;
+            default:
+                topSitesContainer.innerHTML = "";
+                predefinedSites.forEach(site => {
+                    const link = document.createElement("a");
+                    link.href = site.url;
+                    link.className = "top-site";
+                    link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+                    topSitesContainer.appendChild(link);
+                });
+        }
+
+    }
+
     function renderSites(category) {
         // const topSitesContainer = document.getElementById("top-sites");
         topSitesContainer.innerHTML = "";
@@ -90,15 +117,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("btn-productivity").addEventListener("click", (e) => {
         renderSites("productivity");
+        curPreset = 1;
     });
     document.getElementById("btn-gaming").addEventListener("click", (e) => {
         renderSites("gaming");
+        curPreset = 2;
     });
     document.getElementById("btn-media").addEventListener("click", (e) => {
         renderSites("media");
+        curPreset = 3;
     });
     document.getElementById("btn-custom").addEventListener("click", () => {
         renderSites("custom");
+        curPreset = 4;
     });
 
 
@@ -110,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+let curPreset = 0;
 
 console.log("Script is loaded!");
 
@@ -235,6 +267,32 @@ async function autoGenerate() {
     autoGenRefreshId = setInterval(generateHopecore, 10000);
 }
 
+// Select the HUD-toggle button
+const HUDToggle = document.getElementById("HUD-toggle");
+let HUD_shown = true;
+
+if (HUDToggle) {
+    HUDToggle.addEventListener("click", hideHUD);
+} else {
+    console.error("Generate button not found!");
+}
+
+function hideHUD() {
+    if (HUD_shown) {
+        HUDToggle.innerHTML = "Hide HUD: ON";
+    } else {
+        HUDToggle.innerHTML = "Hide HUD: OFF";
+        // renderHelper(curPreset);
+    }
+    document.getElementById("btn-default").hidden = HUD_shown;
+    document.getElementById("btn-productivity").hidden = HUD_shown;
+    document.getElementById("btn-gaming").hidden = HUD_shown;
+    document.getElementById("btn-media").hidden = HUD_shown;
+    document.getElementById("btn-custom").hidden = HUD_shown;
+    document.getElementById("custom-bookmarks").hidden = HUD_shown;
+    document.getElementById("top-sites").innerHTML = '';
+    HUD_shown = !HUD_shown;
+}
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", generateHopecore);

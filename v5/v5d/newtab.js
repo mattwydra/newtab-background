@@ -279,9 +279,9 @@ if (HUDToggle) {
 
 function hideHUD() {
     if (HUD_shown) {
-        HUDToggle.innerHTML = "Hide HUD: ON";
+        HUDToggle.innerHTML = "hide bookmarks: ON";
     } else {
-        HUDToggle.innerHTML = "Hide HUD: OFF";
+        HUDToggle.innerHTML = "hide bookmarks: OFF";
         // renderHelper(curPreset);
     }
     document.getElementById("btn-default").hidden = HUD_shown;

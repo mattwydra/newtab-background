@@ -1,5 +1,9 @@
-# Phase 5c
+# Phase 5d
 
 ## **Objective:**
-- **v5c**: Implement toggle for automatic hopecore refresh after 10 seconds
-   - potential addon: custom time limits for hopecore refresh. 
+- Add more sites to the presets
+- Allow for adding/removing from presets
+- Will support more options:
+   - hide HUD (search bar, sites, etc.)
+   - add images (or videos/gifs, etc.)
+   - add quotes

@@ -20,24 +20,24 @@ This is a repo to house my code for a future firefox extension that I'm creating
 ### Phase 3: Adding in top-sites
 
 - Features top sites as commonly seen on firefox, but styled differently.
-- **[3.1](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)**: Display top-sites with background that changes smoothly between pastel colors.
-- **[3.2](https://mattwydra.github.io/newtab-background/v3/v3b/newtab.html)**: Display top-sites in front of the randomly selected background (changes every 10s).
-- **[3.3](https://mattwydra.github.io/newtab-background/v3/v3c/newtab.html)**: Display the top-sites in front of the randomly selected background, but the background change is smooth as opposed to jarring.
+- **[Version 3.1](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)**: Display top-sites with background that changes smoothly between pastel colors.
+- **[Version 3.2](https://mattwydra.github.io/newtab-background/v3/v3b/newtab.html)**: Display top-sites in front of the randomly selected background (changes every 10s).
+- **[Version 3.3](https://mattwydra.github.io/newtab-background/v3/v3c/newtab.html)**: Display the top-sites in front of the randomly selected background, but the background change is smooth as opposed to jarring.
 
 ### Phase 4: Choice of websites
 
 - Choose between custom presets for quick access, or add your own.
 - Quick access will be entertainment-focused or productivity-focused.
 - Will feature a button to choose which preset.
-- **[4.1](https://mattwydra.github.io/newtab-background/v4/v4a/newtab.html)**: Website with presets.
-- **[4.2](https://mattwydra.github.io/newtab-background/v4/v4b/newtab.html)**: Introduce funcitonality for custom presets.
+- **[Version 4.1](https://mattwydra.github.io/newtab-background/v4/v4a/newtab.html)**: Website with presets.
+- **[Version 4.2](https://mattwydra.github.io/newtab-background/v4/v4b/newtab.html)**: Introduce funcitonality for custom presets.
 
 ### Phase 5: Hopecore Integration
 
-- **[5.1](https://mattwydra.github.io/newtab-background/v5/v5a/newtab.html)**: On new tab load, generate a hopecore image + quote.
-- **[5.2](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**: Button to manually generate a new hopecore.
-- **[5.3](https://mattwydra.github.io/newtab-background/v5/v5c/newtab.html)**: Auto-regenerate hopecore every 10 seconds.
-- **[5.4](https://mattwydra.github.io/newtab-background/v5/v5d/newtab.html) (Partial Implementation)**: Add more sites to the presets, allow for adding/removing from presets, and will support more options:
+- **[Version 5.1](https://mattwydra.github.io/newtab-background/v5/v5a/newtab.html)**: On new tab load, generate a hopecore image + quote.
+- **[Version 5.2](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**: Button to manually generate a new hopecore.
+- **[Version 5.3](https://mattwydra.github.io/newtab-background/v5/v5c/newtab.html)**: Auto-regenerate hopecore every 10 seconds.
+- **[Version 5.4](https://mattwydra.github.io/newtab-background/v5/v5d/newtab.html) (Partial Implementation)**: Add more sites to the presets, allow for adding/removing from presets, and will support more options:
    - hide bookmarks 
    - hide individual elements (search bar, sites, etc.)
    - add images (or videos/gifs, etc.)

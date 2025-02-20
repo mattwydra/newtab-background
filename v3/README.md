@@ -15,3 +15,8 @@
 - [v3a](v3/v3a/README.md)
 - [v3b](v3/v3b/README.md)
 - v3c (coming soon)
+
+## Each Version's zip:
+- [v3a](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)
+- [v3b](https://mattwydra.github.io/newtab-background/v3/v3b/newtab.html)
+- v3c (coming soon)

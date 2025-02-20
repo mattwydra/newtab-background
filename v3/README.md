@@ -17,6 +17,6 @@
 - v3c (coming soon)
 
 ## Each Version's zip:
-- [v3a](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)
-- [v3b](https://mattwydra.github.io/newtab-background/v3/v3b/newtab.html)
+- [v3a](https://mattwydra.github.io/newtab-background/v3/v3d/ext3a.zip)
+- [v3b](https://mattwydra.github.io/newtab-background/v3/v3d/ext3b.zip)
 - v3c (coming soon)

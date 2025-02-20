@@ -1,4 +1,5 @@
-# Version 3A: Pastel Gradient Background
+# Version 3a: Pastel Gradient Background
+Version 3a [zip](https://mattwydra.github.io/newtab-background/v3/v3a/ext3a.zip)
 
 ## Overview
 This version of the custom new tab page displays top sites while the background smoothly transitions between pastel colors. The background color changes continuously in a smooth loop to create a visually appealing experience.

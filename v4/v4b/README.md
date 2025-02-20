@@ -1,4 +1,5 @@
 # Phase 4b
+Version 4b [zip](https://mattwydra.github.io/newtab-background/v4/v4b/ext4b.zip)
 
 ## Overview
 This is an improved version of the custom new tab page, featuring categorized site bookmarks, a dynamic background, and a custom bookmark section. This version refines and extends the functionality of Version A with several key enhancements.

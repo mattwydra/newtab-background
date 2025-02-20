@@ -2,9 +2,9 @@
 ### **Objective:**
 - Display commonly visited sites in a visually appealing way.
 - Different styling options:
-  - Pastel background transitions.
-  - Sites overlaying the random background.
-  - Smooth background transitions.
+  - **[v3a](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)**: Pastel background transitions.
+  - **[v3a](https://mattwydra.github.io/newtab-background/v3/v3a/newtab.html)**: Sites overlaying the random background.
+  - v3c (coming soon): Smooth background transitions.
 
 ### **Implementation:**
 - Store site data in categories.
@@ -12,8 +12,8 @@
 - Use CSS animations for smooth transitions.
 
 ## Each Version's README:
-- [v3a](v3/v3a/README.md)
-- [v3b](v3/v3b/README.md)
+- [v3a](v3a/README.md)
+- [v3b](v3b/README.md)
 - v3c (coming soon)
 
 ## Each Version's zip:

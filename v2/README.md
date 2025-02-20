@@ -1,4 +1,6 @@
 # **Phase 2: Background Rotation (Auto-Switch Every 10s)**
+[zip](https://github.com/mattwydra/newtab-background/blob/main/v2/ext2-1.zip)
+
 ### **Objective:**
 - Rotate the background image every 10 seconds.
 - Optimize performance so it only updates if the tab is active.

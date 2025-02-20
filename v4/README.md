@@ -25,3 +25,11 @@ document.getElementById("add-site-form").addEventListener("submit", (e) => {
     if (url && title) addCustomSite(url, title);
 });
 ```
+
+## Each Version's README:
+- [v4a](v4/v4a/README.md)
+- [v4b](v4/v4b/README.md)
+
+## Each Version's zip:
+- [v4a](https://mattwydra.github.io/newtab-background/v4/v4d/ext4a.zip)
+- [v4b](https://mattwydra.github.io/newtab-background/v4/v4d/ext4b.zip)

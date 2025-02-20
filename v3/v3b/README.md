@@ -1,4 +1,5 @@
-# Version 3B: Random Background Change
+# Version 3b: Random Background Change
+Version 3b [zip](https://mattwydra.github.io/newtab-background/v3/v3b/ext3b.zip)
 
 ## Overview
 This version of the custom new tab page displays top sites against a randomly selected background image, which updates every 10 seconds.

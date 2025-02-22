@@ -94,13 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.getElementById("custom-bookmarks").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const url = document.getElementById("custom-url").value;
-        const title = document.getElementById("custom-title").value;
-        if (url && title) addCustomSite(url, title);
-    });
-
     setRandomBackground();
     setInterval(setRandomBackground, 10000);
     renderSites("productivity"); // Default category

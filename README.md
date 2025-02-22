@@ -56,9 +56,10 @@ This is a repo to house my code for a future firefox extension that I'm creating
 1. Clone the repository
 2. Navigate to ```about:debugging#/runtime/this-firefox```
 3. Select 'Load Temporary Add-on...'
-4. Navigate to: <path/to/cloned/repo>/<version>
-5. Double-click the manifest.json file
-6. Crtl+t to open a new tab
+4. Navigate to: <path/to/cloned/repo>
+5. Navigate to the version you would like to use (e.g.: v5/v5d)
+6. Double-click the manifest.json file
+7. Crtl+t to open a new tab
 
 ### Changing the source code:
 Feel free to change the code on your end as much as you please! However, changes may require a restart of the extension. In that case, return to ```about:debugging#/runtime/this-firefox``` and select 'Reload' below the temporary extension.

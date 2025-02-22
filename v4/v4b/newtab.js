@@ -110,6 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (url && title) addCustomSite(url, title);
     });
 
+    // 🔎 Search Bar - Redirect to default search engine
+    document.getElementById("search-bar").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
+        }
+    });
+
     setRandomBackground();
     setInterval(setRandomBackground, 10000);
 });

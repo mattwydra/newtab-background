@@ -24,7 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
         link.href = site.url;
         link.className = "top-site";
-        link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+
+        // Create image element safely
+        const img = document.createElement("img");
+        img.src = `https://www.google.com/s2/favicons?sz=64&domain=${site.url}`;
+        img.alt = "";
+
+        // Create span for text safely
+        const span = document.createElement("span");
+        span.textContent = site.title; // Prevents unwanted HTML execution
+
+        // Append elements to the link
+        link.appendChild(img);
+        link.appendChild(span);
+
+        // Append link to the container
         topSitesContainer.appendChild(link);
     });
 
@@ -54,32 +68,46 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
-    function renderHelper(presetNum) {
-        switch (presetNum) {
-            case 1:
-                renderSites("productivity");
-                break;
-            case 2:
-                renderSites("gaming");
-                break;
-            case 3:
-                renderSites("media");
-                break;
-            case 4:
-                renderSites("custom");
-                break;
-            default:
-                topSitesContainer.innerHTML = "";
-                predefinedSites.forEach(site => {
-                    const link = document.createElement("a");
-                    link.href = site.url;
-                    link.className = "top-site";
-                    link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
-                    topSitesContainer.appendChild(link);
-                });
-        }
+    // function renderHelper(presetNum) {
+    //     switch (presetNum) {
+    //         case 1:
+    //             renderSites("productivity");
+    //             break;
+    //         case 2:
+    //             renderSites("gaming");
+    //             break;
+    //         case 3:
+    //             renderSites("media");
+    //             break;
+    //         case 4:
+    //             renderSites("custom");
+    //             break;
+    //         default:
+    //             topSitesContainer.innerHTML = "";
+    //             predefinedSites.forEach(site => {
+    //                 const link = document.createElement("a");
+    //                 link.href = site.url;
+    //                 link.className = "top-site";
 
-    }
+    //                 // Create image element safely
+    //                 const img = document.createElement("img");
+    //                 img.src = `https://www.google.com/s2/favicons?sz=64&domain=${site.url}`;
+    //                 img.alt = "";
+
+    //                 // Create span for text safely
+    //                 const span = document.createElement("span");
+    //                 span.textContent = site.title; // Prevents unwanted HTML execution
+
+    //                 // Append elements to the link
+    //                 link.appendChild(img);
+    //                 link.appendChild(span);
+
+    //                 // Append link to the container
+    //                 topSitesContainer.appendChild(link);
+    //             });
+    //     }
+
+    // }
 
     function renderSites(category) {
         // const topSitesContainer = document.getElementById("top-sites");
@@ -106,15 +134,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("btn-default").addEventListener("click", () => {
-        topSitesContainer.innerHTML = "";
+        topSitesContainer.replaceChildren(); // Clears existing elements safely
+
         predefinedSites.forEach(site => {
             const link = document.createElement("a");
             link.href = site.url;
             link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+
+            // Create image element safely
+            const img = document.createElement("img");
+            img.src = `https://www.google.com/s2/favicons?sz=64&domain=${site.url}`;
+            img.alt = "";
+
+            // Create span for text safely
+            const span = document.createElement("span");
+            span.textContent = site.title; // Prevents unwanted HTML execution
+
+            // Append elements to the link
+            link.appendChild(img);
+            link.appendChild(span);
+
+            // Append link to the container
             topSitesContainer.appendChild(link);
         });
     });
+
     document.getElementById("btn-productivity").addEventListener("click", (e) => {
         renderSites("productivity");
         curPreset = 1;
@@ -211,7 +255,7 @@ async function generateHopecore() {
 
         // Update the quote
         const resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = "";
+        resultContainer.replaceChildren();
         const quoteElement = document.createElement("div");
         quoteElement.textContent = randomQuote;
         quoteElement.style.textAlign = "center";
@@ -258,10 +302,10 @@ if (autoToggle) {
         autogen = !autogen;
         if (autogen) {
             autoGenerate();
-            autoToggle.innerHTML = "auto generate: ON";
+            autoToggle.textContent = "auto generate: ON";
         }
         else {
-            autoToggle.innerHTML = "auto generate: OFF";
+            autoToggle.textContent = "auto generate: OFF";
             clearInterval(autoGenRefreshId);
         }
     });
@@ -285,9 +329,9 @@ if (HUDToggle) {
 
 function hideHUD() {
     if (HUD_shown) {
-        HUDToggle.innerHTML = "hide bookmarks: ON";
+        HUDToggle.textContent = "hide bookmarks: ON";
     } else {
-        HUDToggle.innerHTML = "hide bookmarks: OFF";
+        HUDToggle.textContent = "hide bookmarks: OFF";
         // renderHelper(curPreset);
     }
     document.getElementById("btn-default").hidden = HUD_shown;
@@ -296,7 +340,7 @@ function hideHUD() {
     document.getElementById("btn-media").hidden = HUD_shown;
     document.getElementById("btn-custom").hidden = HUD_shown;
     document.getElementById("custom-bookmarks").hidden = HUD_shown;
-    document.getElementById("top-sites").innerHTML = '';
+    document.getElementById("top-sites").replaceChildren();
     HUD_shown = !HUD_shown;
 }
 

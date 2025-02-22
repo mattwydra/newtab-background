@@ -29,6 +29,11 @@ async function fetchAnime() {
 
         const anime = animeData.data;
         document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
+        document.body.style.backgroundSize = "auto 80vh";
+        document.body.style.backgroundPositionY = "0vh";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundColor = "black";
+
         statusText.textContent = `Background set to: ${anime.title}`;
     } catch (error) {
         statusText.textContent = "Error fetching data. Try again later.";

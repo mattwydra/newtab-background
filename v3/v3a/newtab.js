@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         const sites = await browser.topSites.get();
         const container = document.getElementById("top-sites");
 
-        container.innerHTML = ""; // Clear previous
+        container.textContent = ""; // Clear previous
 
         sites.forEach(site => {
             const siteTitle = site.title || site.url.replace(/https?:\/\/(www\.)?/, "");
             const link = document.createElement("a");
             link.href = site.url;
             link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${siteTitle}</span>`;
+            link.textContent = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${siteTitle}</span>`;
             container.appendChild(link);
         });
     }

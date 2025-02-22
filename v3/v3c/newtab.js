@@ -39,4 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
         link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
         topSitesContainer.appendChild(link);
     });
+
+    // 🔎 Search Bar - Redirect to default search engine
+    document.getElementById("search-bar").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
+        }
+    });
 });

@@ -132,6 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
         curPreset = 4;
     });
 
+    // 🔎 Search Bar - Redirect to default search engine
+    document.getElementById("search-bar").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(this.value)}`;
+        }
+    });
 
     document.getElementById("custom-bookmarks").addEventListener("submit", (e) => {
         e.preventDefault();

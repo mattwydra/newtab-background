@@ -20,4 +20,4 @@ Version's Zips:
 - **[v5a](https://mattwydra.github.io/newtab-background/v5/v5a/ext5a.zip)**
 - **[v5b](https://mattwydra.github.io/newtab-background/v5/v5b/ext5b.zip)**
 - **[v5c](https://mattwydra.github.io/newtab-background/v5/v5c/ext5c.zip)**
-- **[v5d](https://mattwydra.github.io/newtab-background/v5/v5d/ext1.zip)**
+- **[v5d](https://mattwydra.github.io/newtab-background/v5/v5d/ext5d.zip)**

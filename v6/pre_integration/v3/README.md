@@ -1,16 +1,11 @@
-# Phase 6 part 2
+# Phase 6 part 3
 (zips coming soon)
 
 ## **Updates in this version**
-- Generates 10 recently watched anime
-- Buttons are in English, text in Romaji to cover bases
-- Overcomes rate-limitations
+- Better styling for text
+- Add button for hiding generated titles
+- Better styling for generated image
 
-## **Challenges for next version**
-- Elements need to be styled better
-   - Hard to read text, buttons take up a lot of space
-   - Should Implement button to hide all buttons on the screen
-   
 ## **Further Implementation**
 - Entering a specific anime for the background
 - Entering a specific character for the background

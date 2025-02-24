@@ -1,20 +1,27 @@
-# Phase 6 Integration
-(zips coming soon)
+# **Phase 6 Integration**  
+*(ZIP files coming soon)*  
 
-## **Planned features in this phase**
-- Generates 10 recently watched anime
-- Buttons are in English, text in Romaji to cover bases
-- Overcomes rate-limitations
-- Better styling for text
-- Add button for hiding generated titles
-- Better styling for generated image
-- Create field to enter choice anime for background
-- Create field to enter a specific character for the background
-- Tiled approach to show multiple images (with toggle for any of the characters/titles the user doesn't want to see)
-- Generates 10 recently played games
-- Toggle for the two versions
-- Implementation for other types of profiles
-- Fetch and display recent anime from a user's MAL profile.
-- Integrate Steam or other game tracking services.
-- Allow users to toggle between anime, games, and hopecore images.
-- Rotate between all personalized content.
+## **Planned Features**  
+
+### **General Improvements**  
+- Overcome rate limitations.  
+- Improved styling for text and generated images.  
+- Add a button to hide generated titles.  
+- Toggle between different versions.  
+- Implementation for other profile types.  
+
+### **Anime Features**  
+- Fetch and display recent anime from a user's MyAnimeList (MAL) profile.  
+- Generate a list of 10 recently watched anime.  
+- Display buttons in English, but titles in Romaji for broader accessibility.  
+- Create a field to enter a specific anime for the background.  
+- Create a field to enter a specific character for the background.  
+- Introduce a tiled layout to show multiple images, with a toggle to hide unwanted characters/titles.  
+
+### **Gaming Features**  
+- Generate a list of 10 recently played games.  
+- Integrate Steam or other game-tracking services.  
+
+### **Personalized Content**  
+- Allow users to toggle between anime, games, and Hopecore images.  
+- Rotate between all personalized content for a dynamic experience. 

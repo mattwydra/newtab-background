@@ -20,7 +20,7 @@ body {
     margin-top: 50px;
 }
 
-#MAL-toggle {
+#btn-toggle {
     background: rgb(65, 65, 65);
     color: lavender;
     text-decoration: none;
@@ -31,12 +31,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#MAL-toggle:hover {
+#btn-toggle:hover {
     background-color: plum;
     color: black;
 }
 
-#username {
+#characterName {
     border-radius: 5px;
     border: none;
 }
@@ -74,21 +74,4 @@ button {
 button:hover {
     background-color: plum;
     color: black;
-}
-
-.close-button {
-    font-size: 16px;
-    color: white;
-    background-color: crimson;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
-
-.close-button:hover {
-    background-color: darkred;
 }

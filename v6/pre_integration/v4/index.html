@@ -2,24 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAL Background Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firefox new tab</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body[data-theme="light"] {
+            background-color: lavender;
+            color: plum;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .version-link {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: rosybrown;
+            color: aliceblue;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body[data-theme="light"] .version-link {
+            background-color: lightgray;
+            color: black;
+        }
+
+        .version-link:hover {
+            background-color: lavenderblush;
+            color: darksalmon;
+        }
+
+        body[data-theme="light"] .version-link:hover {
+            background-color: plum;
+            color: white;
+        }
+
+        .toggle-btn {
+            margin: 20px;
+            padding: 10px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: darkgray;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body[data-theme="light"] .toggle-btn {
+            background-color: gray;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1><span id="header">MyAnimeList Background Generator</span></h1>
-        <input type="text" id="username" placeholder="Enter MAL Username">
-        <button onclick="fetchAnime()">Generate Background</button>
-        <p id="status"></p>
-        <div id="buttonContainer"></div> <!-- Added this for anime buttons -->
+    <h1>How would you like your background to be generated?</h1>
+    <button class="toggle-btn" id="themeToggle">Toggle Dark/Light Mode</button>
+    <div>
+        <a href="mal_gen/index.html" class="version-link">enter your MAL profile</a>
     </div>
     <div>
-        <button id="MAL-toggle">MAL Prompt: SHOWN</button>
+        <a href="user_gen/character/index.html" class="version-link">enter an anime</a>
     </div>
-    <script src="script.js"></script>
+    <div>
+        <a href="user_gen/anime/index.html" class="version-link">enter a character</a>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        themeToggle.addEventListener("click", () => {
+            const body = document.body;
+            const currentTheme = body.getAttribute("data-theme");
+
+            if (currentTheme === "light") {
+                body.setAttribute("data-theme", "dark");
+            } else {
+                body.setAttribute("data-theme", "light");
+            }
+        });
+    </script>
 </body>
 
 </html>

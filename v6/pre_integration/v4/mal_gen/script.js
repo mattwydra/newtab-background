@@ -122,8 +122,9 @@ function hideMAL() {
         MALToggle.textContent = "MAL Prompt: HIDDEN";
     } else {
         MALToggle.textContent = "MAL Prompt: SHOWN";
-        // renderHelper(curPreset);
     }
     document.getElementById("username").hidden = MAL_shown;
+    document.getElementById("header").hidden = MAL_shown;
+    document.getElementById("generate-btn").hidden = MAL_shown;
     MAL_shown = !MAL_shown;
 }

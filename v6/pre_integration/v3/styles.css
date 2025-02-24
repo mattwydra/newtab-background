@@ -12,9 +12,62 @@ body {
     margin-top: 50px;
 }
 
+#MAL-toggle {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 90px;
+    right: 80px;
+}
+
+#MAL-toggle:hover {
+    background-color: black;
+    color: plum;
+}
+
 input,
 button {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
+}
+
+.anime-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: plum;
+    color: paleturquoise;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.close-button {
+    font-size: 16px;
+    color: white;
+    background-color: crimson;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.close-button:hover {
+    background-color: darkred;
 }

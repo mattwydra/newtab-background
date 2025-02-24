@@ -1,4 +1,3 @@
-/* script.js */
 async function fetchAnime() {
     const username = document.getElementById("username").value;
     const statusText = document.getElementById("status");
@@ -27,10 +26,8 @@ async function fetchAnime() {
         const fetchCounts = [2, 3, 3, 2]; // The rate-limited fetch pattern
         let fetchPatternIndex = 0;
 
-        // Function to handle fetching in batches
         const fetchBatch = async () => {
             if (currentIndex >= recentAnime.length) {
-                // Only update the status text once all anime have been processed
                 statusText.textContent = "Select an anime to set as background.";
                 return;
             }
@@ -49,20 +46,34 @@ async function fetchAnime() {
                 }
 
                 const anime = animeData.data;
+
+                // Create a wrapper div for the button and close button
+                const animeWrapper = document.createElement("div");
+                animeWrapper.classList.add("anime-wrapper");
+
+                // Create the anime button
                 const button = document.createElement("button");
                 button.textContent = `${anime.title_english || anime.title}`;
                 button.onclick = () => setBackground(anime);
-                buttonContainer.appendChild(button);
+
+                // Create the 'x' button
+                const closeButton = document.createElement("span");
+                closeButton.textContent = "✖"; // Unicode 'X' character
+                closeButton.classList.add("close-button");
+                closeButton.onclick = () => animeWrapper.remove();
+
+                // Append button and close button to the wrapper
+                animeWrapper.appendChild(button);
+                animeWrapper.appendChild(closeButton);
+                buttonContainer.appendChild(animeWrapper);
             }
 
             currentIndex += fetchCount;
             fetchPatternIndex = (fetchPatternIndex + 1) % fetchCounts.length;
 
             if (currentIndex < recentAnime.length) {
-                // Wait for a specified time before continuing
-                setTimeout(fetchBatch, 1500); // Wait 1.5 seconds
+                setTimeout(fetchBatch, 3000); // Wait 3 seconds
             } else {
-                // All requests are done, update the status text now
                 statusText.textContent = "Select an anime to set as background.";
             }
         };
@@ -80,5 +91,39 @@ function setBackground(anime) {
     document.body.style.backgroundPositionY = "0vh";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundColor = "black";
+
+    const headerText = document.getElementById("header");
+    headerText.style.backgroundColor = "rgba(255, 192, 239, 0.73)";
+    headerText.style.padding = "10px 20px";
+    headerText.style.fontSize = "24px";
+    headerText.style.color = "black";
+
     document.getElementById("status").textContent = `Background set to: ${anime.title}`;
+    const statusText = document.getElementById("status");
+    statusText.style.position = "absolute";
+    statusText.style.bottom = "75px"; // Adjust as needed
+    statusText.style.left = "50%";
+    statusText.style.transform = "translateX(-50%)"; // Center horizontally
+    statusText.style.fontSize = "20px";
+}
+
+// Select the MAL-toggle button
+const MALToggle = document.getElementById("MAL-toggle");
+let MAL_shown = true;
+
+if (MALToggle) {
+    MALToggle.addEventListener("click", hideMAL);
+} else {
+    console.error("Generate button not found!");
+}
+
+function hideMAL() {
+    if (MAL_shown) {
+        MALToggle.textContent = "MAL Prompt: HIDDEN";
+    } else {
+        MALToggle.textContent = "MAL Prompt: SHOWN";
+        // renderHelper(curPreset);
+    }
+    document.getElementById("username").hidden = MAL_shown;
+    MAL_shown = !MAL_shown;
 }

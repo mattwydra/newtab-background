@@ -8,6 +8,11 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
+/* #status {
+    position: "absolute";
+    top: "400px";
+} */
+
 .container {
     margin-top: 50px;
 }

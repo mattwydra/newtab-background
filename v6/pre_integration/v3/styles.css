@@ -9,8 +9,11 @@ body {
 }
 
 /* #status {
-    position: "absolute";
-    top: "400px";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 } */
 
 .container {
@@ -25,11 +28,12 @@ body {
     position: absolute;
     top: 90px;
     right: 80px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #MAL-toggle:hover {
-    background-color: black;
-    color: plum;
+    background-color: rgba(221, 160, 221, 0.699);
+    color: black;
 }
 
 input,
@@ -37,6 +41,7 @@ button {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .anime-wrapper {
@@ -49,15 +54,17 @@ button {
 button {
     padding: 10px;
     border: none;
-    background-color: plum;
-    color: paleturquoise;
+    background: rgb(65, 65, 65);
+    color: lavender;
     cursor: pointer;
     border-radius: 5px;
     margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: rgba(221, 160, 221, 0.699);
+    color: black;
 }
 
 .close-button {

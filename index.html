@@ -16,13 +16,39 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.5s ease-in-out;
+      z-index: -1;
+    }
+
+    .bg1 {
+      background-image: url('wallpapers/guts2.jpg');
+    }
+
+    .bg2 {
+      background-image: url('wallpapers/guts.jpg');
+      opacity: 0;
+    }
+
     body[data-theme="light"] {
       background-color: lavender;
       color: plum;
+      background: lavender;
     }
 
     h1 {
       margin-top: 20px;
+    }
+
+    body[data-theme="light"] #header {
+      background-color: lavenderblush;
     }
 
     .version-link {
@@ -72,7 +98,9 @@
 </head>
 
 <body>
-  <h1>Choose your new tab version!</h1>
+  <div class="background bg1"></div>
+  <div class="background bg2"></div>
+  <h1><span id="header">Choose your new tab version!</span></h1>
   <button class="toggle-btn" id="themeToggle">Toggle Dark/Light Mode</button>
   <div>
     <a href="v1/newtab.html" class="version-link">version 1.0</a>
@@ -100,22 +128,15 @@
   </div>
 
   <script>
-    const wallpapers = ["wallpapers/guts2.jpg"];
-
-    function setRandomBackground() {
-      const backgroundImg = wallpapers[0];
-      document.body.style.background = `url('${backgroundImg}') no-repeat center center fixed`;
-      document.body.style.backgroundSize = "cover";
-    }
-
-    setRandomBackground();
-
     const themeToggle = document.getElementById("themeToggle");
+    let toggled = false;
 
     themeToggle.addEventListener("click", () => {
       const body = document.body;
       const currentTheme = body.getAttribute("data-theme");
-
+      toggled = !toggled;
+      document.querySelector(".bg2").style.opacity = toggled ? "1" : "0";
+      document.querySelector(".bg1").style.opacity = toggled ? "0" : "1";
       if (currentTheme === "light") {
         body.setAttribute("data-theme", "dark");
       } else {

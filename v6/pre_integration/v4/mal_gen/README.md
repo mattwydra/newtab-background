@@ -1,10 +1,8 @@
-# Phase 6 part 4
+# Phase 6 part 4.1
 (zips coming soon)
 
 ## **Updates in this version**
-- Create field to enter choice anime for background
-- Create field to enter a specific character for the background
-- Tiled approach to show multiple images (with toggle for any of the characters/titles the user doesn't want to see)
+- Tiled approach option to show multiple images (with toggle for any of the characters/titles the user doesn't want to see)
 - Fix implementation of button to remove elements
 
 ## **Challenge for next version version**

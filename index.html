@@ -24,7 +24,7 @@
       height: 100%;
       background-size: cover;
       background-position: center;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity ease-in-out .5s;
       z-index: -1;
     }
 
@@ -48,7 +48,8 @@
     }
 
     body[data-theme="light"] #header {
-      background-color: lavenderblush;
+      background-color: rgba(59, 59, 59, 0.788);
+      padding: 10px 20px;
     }
 
     .version-link {
@@ -136,7 +137,6 @@
       const currentTheme = body.getAttribute("data-theme");
       toggled = !toggled;
       document.querySelector(".bg2").style.opacity = toggled ? "1" : "0";
-      document.querySelector(".bg1").style.opacity = toggled ? "0" : "1";
       if (currentTheme === "light") {
         body.setAttribute("data-theme", "dark");
       } else {

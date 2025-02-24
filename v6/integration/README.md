@@ -14,3 +14,7 @@
 - Generates 10 recently played games
 - Toggle for the two versions
 - Implementation for other types of profiles
+- Fetch and display recent anime from a user's MAL profile.
+- Integrate Steam or other game tracking services.
+- Allow users to toggle between anime, games, and hopecore images.
+- Rotate between all personalized content.

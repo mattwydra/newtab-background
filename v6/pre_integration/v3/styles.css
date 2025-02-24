@@ -32,8 +32,17 @@ body {
 }
 
 #MAL-toggle:hover {
-    background-color: rgba(221, 160, 221, 0.699);
+    background-color: plum;
     color: black;
+}
+
+#username {
+    border-radius: 5px;
+    border: none;
+}
+
+#header {
+    border-radius: 5px;
 }
 
 input,
@@ -63,7 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: rgba(221, 160, 221, 0.699);
+    background-color: plum;
     color: black;
 }
 

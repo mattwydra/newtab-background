@@ -1,5 +1,5 @@
-# Phase 6 part 4.3
+# Phase 6 part 5.3
 (zips coming soon)
 
 ## **Updates in this version**
-- Create field to enter choice character for background
+- Option to generate backgrounds based on favorite characters (mirror MAL approach)

@@ -1,5 +1,5 @@
-# Phase 6 part 4.2
+# Phase 6 part 5.2
 (zips coming soon)
 
 ## **Updates in this version**
-- Create field to enter choice anime for background
+- Option to generate backgrounds based on favorite shows (mirror MAL approach)

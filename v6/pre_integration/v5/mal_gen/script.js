@@ -8,7 +8,7 @@ async function fetchAnime() {
         statusText.textContent = "Please enter a MAL username.";
         return;
     }
-    statusText.textContent = "Please wait, should only take 5 seconds...";
+    statusText.textContent = "Please wait, gathering titles... tiling won't properly work until all have been fetched";
 
     try {
         const response = await fetch(`https://api.jikan.moe/v4/users/${username}/history/anime`);
@@ -104,8 +104,8 @@ function setBackground(anime = null) {
 
         // Background positions for 2 rows x 5 columns
         document.body.style.backgroundPosition = [
-            "0% 0%", "20% 0%", "40% 0%", "60% 0%", "80% 0%", // Top row
-            "0% 50%", "20% 50%", "40% 50%", "60% 50%", "80% 50%" // Bottom row
+            "10% 0%", "30% 0%", "50% 0%", "70% 0%", "90% 0%", // Top row
+            "10% 100%", "30% 100%", "50% 100%", "70% 100%", "90% 100%" // Bottom row
         ].slice(0, selectedImages.length).join(", ");
 
         document.body.style.backgroundRepeat = "no-repeat"; // Prevent overlap

@@ -88,10 +88,10 @@ let allBackgrounds = [];
 
 function setBackground(anime = null) {
     if (!tiledMode && anime) {
-        // Single image mode
+        // Reset backgroundPosition in single image mode
         document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
+        document.body.style.backgroundPosition = ""; // Reset position
         document.body.style.backgroundSize = "auto 80vh";
-        document.body.style.backgroundPositionY = "0vh";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundColor = "black";
     } else if (tiledMode && allBackgrounds.length > 0) {
@@ -108,9 +108,18 @@ function setBackground(anime = null) {
             "10% 100%", "30% 100%", "50% 100%", "70% 100%", "90% 100%" // Bottom row
         ].slice(0, selectedImages.length).join(", ");
 
-        document.body.style.backgroundRepeat = "no-repeat"; // Prevent overlap
+        document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundColor = "black";
     }
+
+    // Hide/show generated title buttons & "X" buttons
+    const animeButtons = document.querySelectorAll(".anime-button, .close-button");
+    animeButtons.forEach(button => {
+        button.style.display = tiledMode ? "none" : "inline-block";
+    });
+
+    // Debugging: Check if buttons are selected
+    console.log("Buttons found:", animeButtons.length); // Check if buttons exist
 
     // Update status text
     const statusText = document.getElementById("status");
@@ -131,6 +140,8 @@ function setBackground(anime = null) {
     statusText.style.transform = "translateX(-50%)";
     statusText.style.fontSize = "20px";
 }
+
+
 
 
 

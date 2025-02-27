@@ -2,7 +2,7 @@
 (zips coming soon)
 
 ## **Updates in this version**
-- Tiled approach option to show multiple images (with toggle for any of the characters/titles the user doesn't want to see)
+- Tiled approach option to show all 10 previously watched anime at once (with toggle to go back to single image)
 - Fix implementation of button to remove elements
 
 ## **Challenge for next version version**

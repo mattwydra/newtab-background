@@ -20,10 +20,11 @@ async function fetchAnime() {
             return;
         }
 
-        const recentAnime = data.data.slice(0, 10); // Get the first 10 anime history entries
+        const recentAnime = data.data.slice(0, 10); // Cap at most recent 50 anime
+        allBackgrounds = []; // Clear previous backgrounds
 
         let currentIndex = 0;
-        const fetchCounts = [2, 3, 3, 2]; // The rate-limited fetch pattern
+        const fetchCounts = [2, 3, 3, 2]; // Rate-limited fetch pattern
         let fetchPatternIndex = 0;
 
         const fetchBatch = async () => {
@@ -47,23 +48,19 @@ async function fetchAnime() {
                 const anime = animeData.data;
                 allBackgrounds.push(anime.images.jpg.large_image_url); // Store image for tiling mode
 
-                // Create the button as before...
-                // Create a wrapper div for the button and close button
+                // Create anime button
                 const animeWrapper = document.createElement("div");
                 animeWrapper.classList.add("anime-wrapper");
 
-                // Create the anime button
                 const button = document.createElement("button");
                 button.textContent = `${anime.title_english || anime.title}`;
                 button.onclick = () => setBackground(anime);
 
-                // Create the 'x' button
                 const closeButton = document.createElement("span");
-                closeButton.textContent = "✖"; // Unicode 'X' character
+                closeButton.textContent = "✖";
                 closeButton.classList.add("close-button");
                 closeButton.onclick = () => animeWrapper.remove();
 
-                // Append button and close button to the wrapper
                 animeWrapper.appendChild(button);
                 animeWrapper.appendChild(closeButton);
                 buttonContainer.appendChild(animeWrapper);
@@ -89,75 +86,58 @@ async function fetchAnime() {
 let tiledMode = false;
 let allBackgrounds = [];
 
-function setBackground(anime) {
-    if (!tiledMode) {
+function setBackground(anime = null) {
+    if (!tiledMode && anime) {
         // Single image mode
         document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
         document.body.style.backgroundSize = "auto 80vh";
         document.body.style.backgroundPositionY = "0vh";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundColor = "black";
-    } else {
-        // Tiled mode: use all images
-        if (allBackgrounds.length === 0) {
-            document.getElementById("status").textContent = "No backgrounds to tile yet!";
-            return;
-        }
-
-        // CSS gradient to tile multiple images
-        document.body.style.backgroundImage = allBackgrounds.map(url => `url(${url})`).join(", ");
-        document.body.style.backgroundSize = "200px 200px"; // Adjust tile size as needed
-        document.body.style.backgroundRepeat = "repeat";
+    } else if (tiledMode && allBackgrounds.length > 0) {
+        // Use at most 10 images to prevent extreme layering
+        const selectedImages = allBackgrounds.slice(0, 10);
+        document.body.style.backgroundImage = selectedImages.map(url => `url(${url})`).join(", ");
+        document.body.style.backgroundSize = "33% 33%"; // Adjust grid layout
+        document.body.style.backgroundRepeat = "no-repeat"; // Prevent full overlap
+        document.body.style.backgroundPosition = [
+            "0% 0%", "33% 0%", "66% 0%",
+            "0% 33%", "33% 33%", "66% 33%",
+            "0% 66%", "33% 66%", "66% 66%"
+        ].slice(0, selectedImages.length).join(", ");
         document.body.style.backgroundColor = "black";
     }
 
+    // Update status text
+    const statusText = document.getElementById("status");
+    statusText.textContent = tiledMode
+        ? "Tiled background applied!"
+        : `Background set to: ${anime ? anime.title : "none"}`;
+
+    // Adjust UI styles
     const headerText = document.getElementById("header");
     headerText.style.backgroundColor = "rgba(255, 192, 239, 0.73)";
     headerText.style.padding = "10px 20px";
     headerText.style.fontSize = "24px";
     headerText.style.color = "black";
 
-    document.getElementById("status").textContent = `Background set to: ${anime.title}`;
-    const statusText = document.getElementById("status");
     statusText.style.position = "absolute";
-    statusText.style.bottom = "75px"; // Adjust as needed
+    statusText.style.bottom = "75px";
     statusText.style.left = "50%";
-    statusText.style.transform = "translateX(-50%)"; // Center horizontally
+    statusText.style.transform = "translateX(-50%)";
     statusText.style.fontSize = "20px";
 }
+
+
 
 function toggleTiledBackground() {
     tiledMode = !tiledMode;
     document.getElementById("toggle-background-mode").textContent = tiledMode ? "Switch to Single Image" : "Switch to Tiled Mode";
 
-    // Reapply the background in the new mode
     if (tiledMode) {
-        setBackground(); // Apply tiled mode
+        setBackground();
     } else {
-        document.body.style.backgroundImage = ""; // Clear tiled mode and wait for single selection
+        document.body.style.backgroundImage = "";
         document.getElementById("status").textContent = "Select an anime to set as background.";
     }
-}
-
-
-// Select the MAL-toggle button
-const MALToggle = document.getElementById("MAL-toggle");
-let MAL_shown = true;
-
-if (MALToggle) {
-    MALToggle.addEventListener("click", hideMAL);
-} else {
-    console.error("Generate button not found!");
-}
-
-function hideMAL() {
-    if (MAL_shown) {
-        MALToggle.textContent = "MAL Prompt: HIDDEN";
-    } else {
-        MALToggle.textContent = "MAL Prompt: SHOWN";
-    }
-    document.getElementById("username").hidden = MAL_shown;
-    document.getElementById("header").hidden = MAL_shown;
-    document.getElementById("generate-btn").hidden = MAL_shown;
-    MAL_shown = !MAL_shown;
 }

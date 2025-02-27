@@ -39,14 +39,15 @@ async function fetchAnime() {
                 const animeId = entry.entry.mal_id;
                 const animeResponse = await fetch(`https://api.jikan.moe/v4/anime/${animeId}`);
                 const animeData = await animeResponse.json();
-                console.log("Anime Details Response:", animeData);
 
                 if (!animeData || !animeData.data || !animeData.data.images) {
                     continue;
                 }
 
                 const anime = animeData.data;
+                allBackgrounds.push(anime.images.jpg.large_image_url); // Store image for tiling mode
 
+                // Create the button as before...
                 // Create a wrapper div for the button and close button
                 const animeWrapper = document.createElement("div");
                 animeWrapper.classList.add("anime-wrapper");
@@ -85,12 +86,30 @@ async function fetchAnime() {
     }
 }
 
+let tiledMode = false;
+let allBackgrounds = [];
+
 function setBackground(anime) {
-    document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
-    document.body.style.backgroundSize = "auto 80vh";
-    document.body.style.backgroundPositionY = "0vh";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundColor = "black";
+    if (!tiledMode) {
+        // Single image mode
+        document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
+        document.body.style.backgroundSize = "auto 80vh";
+        document.body.style.backgroundPositionY = "0vh";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundColor = "black";
+    } else {
+        // Tiled mode: use all images
+        if (allBackgrounds.length === 0) {
+            document.getElementById("status").textContent = "No backgrounds to tile yet!";
+            return;
+        }
+
+        // CSS gradient to tile multiple images
+        document.body.style.backgroundImage = allBackgrounds.map(url => `url(${url})`).join(", ");
+        document.body.style.backgroundSize = "200px 200px"; // Adjust tile size as needed
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backgroundColor = "black";
+    }
 
     const headerText = document.getElementById("header");
     headerText.style.backgroundColor = "rgba(255, 192, 239, 0.73)";
@@ -106,6 +125,20 @@ function setBackground(anime) {
     statusText.style.transform = "translateX(-50%)"; // Center horizontally
     statusText.style.fontSize = "20px";
 }
+
+function toggleTiledBackground() {
+    tiledMode = !tiledMode;
+    document.getElementById("toggle-background-mode").textContent = tiledMode ? "Switch to Single Image" : "Switch to Tiled Mode";
+
+    // Reapply the background in the new mode
+    if (tiledMode) {
+        setBackground(); // Apply tiled mode
+    } else {
+        document.body.style.backgroundImage = ""; // Clear tiled mode and wait for single selection
+        document.getElementById("status").textContent = "Select an anime to set as background.";
+    }
+}
+
 
 // Select the MAL-toggle button
 const MALToggle = document.getElementById("MAL-toggle");

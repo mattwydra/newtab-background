@@ -113,9 +113,9 @@ function setBackground(anime = null) {
     }
 
     // Hide/show generated title buttons & "X" buttons
-    const animeButtons = document.querySelectorAll(".anime-button, .close-button");
+    const animeButtons = document.querySelectorAll(".anime-button, .close-button, .anime-wrapper");
     animeButtons.forEach(button => {
-        button.style.display = tiledMode ? "none" : "inline-block";
+        button.style.opacity = tiledMode ? "0" : "1";
     });
 
     // Debugging: Check if buttons are selected
@@ -140,10 +140,6 @@ function setBackground(anime = null) {
     statusText.style.transform = "translateX(-50%)";
     statusText.style.fontSize = "20px";
 }
-
-
-
-
 
 function toggleTiledBackground() {
     tiledMode = !tiledMode;

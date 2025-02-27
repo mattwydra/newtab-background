@@ -115,7 +115,7 @@ function setBackground(anime = null) {
     // Hide/show generated title buttons & "X" buttons
     const animeButtons = document.querySelectorAll(".anime-button, .close-button, .anime-wrapper");
     animeButtons.forEach(button => {
-        button.style.opacity = tiledMode ? "0" : "1";
+        button.style.opacity = tiledMode ? "0%" : "100%";
     });
 
     // Debugging: Check if buttons are selected
@@ -151,4 +151,34 @@ function toggleTiledBackground() {
         document.body.style.backgroundImage = "";
         document.getElementById("status").textContent = "Select an anime to set as background.";
     }
+}
+
+// Select the MAL-toggle button
+const MALToggle = document.getElementById("MAL-toggle");
+let MAL_shown = true;
+
+if (MALToggle) {
+    MALToggle.addEventListener("click", hideMAL);
+} else {
+    console.error("Generate button not found!");
+}
+
+function hideMAL() {
+    if (MAL_shown) {
+        MALToggle.textContent = "MAL Prompt: HIDDEN";
+        // Hide elements
+        document.getElementById("username").hidden = true;
+        document.getElementById("header").hidden = true;
+        document.getElementById("generate-btn").hidden = true;
+        document.getElementById("toggle-background-mode").hidden = true;
+    } else {
+        MALToggle.textContent = "MAL Prompt: SHOWN";
+        // Show elements
+        document.getElementById("username").hidden = false;
+        document.getElementById("header").hidden = false;
+        document.getElementById("generate-btn").hidden = false;
+        document.getElementById("toggle-background-mode").hidden = false;
+    }
+    // Toggle the MAL_shown state after updating the visibility of elements
+    MAL_shown = !MAL_shown;
 }

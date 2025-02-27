@@ -95,23 +95,27 @@ function setBackground(anime = null) {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundColor = "black";
     } else if (tiledMode && allBackgrounds.length > 0) {
-        // Use at most 10 images to prevent extreme layering
+        // Use at most 10 images
         const selectedImages = allBackgrounds.slice(0, 10);
+
+        // Set up a 2-row x 5-column grid
         document.body.style.backgroundImage = selectedImages.map(url => `url(${url})`).join(", ");
-        document.body.style.backgroundSize = "33% 33%"; // Adjust grid layout
-        document.body.style.backgroundRepeat = "no-repeat"; // Prevent full overlap
+        document.body.style.backgroundSize = "20% 50%"; // 5 columns, 2 rows
+
+        // Background positions for 2 rows x 5 columns
         document.body.style.backgroundPosition = [
-            "0% 0%", "33% 0%", "66% 0%",
-            "0% 33%", "33% 33%", "66% 33%",
-            "0% 66%", "33% 66%", "66% 66%"
+            "0% 0%", "20% 0%", "40% 0%", "60% 0%", "80% 0%", // Top row
+            "0% 50%", "20% 50%", "40% 50%", "60% 50%", "80% 50%" // Bottom row
         ].slice(0, selectedImages.length).join(", ");
+
+        document.body.style.backgroundRepeat = "no-repeat"; // Prevent overlap
         document.body.style.backgroundColor = "black";
     }
 
     // Update status text
     const statusText = document.getElementById("status");
     statusText.textContent = tiledMode
-        ? "Tiled background applied!"
+        ? "Tiled background (2x5) applied!"
         : `Background set to: ${anime ? anime.title : "none"}`;
 
     // Adjust UI styles

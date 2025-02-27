@@ -104,8 +104,8 @@ function setBackground(anime = null) {
 
         // Background positions for 2 rows x 5 columns
         document.body.style.backgroundPosition = [
-            "10% 0%", "30% 0%", "50% 0%", "70% 0%", "90% 0%", // Top row
-            "10% 100%", "30% 100%", "50% 100%", "70% 100%", "90% 100%" // Bottom row
+            "10% 10%", "30% 10%", "50% 10%", "70% 10%", "90% 10%", // Top row
+            "10% 110%", "30% 110%", "50% 110%", "70% 110%", "90% 110%" // Bottom row
         ].slice(0, selectedImages.length).join(", ");
 
         document.body.style.backgroundRepeat = "no-repeat";
@@ -114,12 +114,32 @@ function setBackground(anime = null) {
 
     // Hide/show generated title buttons & "X" buttons
     const animeButtons = document.querySelectorAll(".anime-button, .close-button, .anime-wrapper");
+
+    // Hide or show buttons
     animeButtons.forEach(button => {
-        button.style.opacity = tiledMode ? "0%" : "100%";
+        if (tiledMode) {
+            button.style.opacity = "0";
+            button.style.pointerEvents = "none"; // Prevent clicks
+        } else {
+            button.style.opacity = "1";
+            button.style.pointerEvents = "auto"; // Re-enable clicks
+        }
     });
 
-    // Debugging: Check if buttons are selected
-    console.log("Buttons found:", animeButtons.length); // Check if buttons exist
+
+
+    // If switching back to single mode, auto-select the most recent anime
+    if (!tiledMode && allBackgrounds.length > 0) {
+        const mostRecentAnime = document.querySelector(".anime-button"); // First anime button
+        if (mostRecentAnime) {
+            console.log("Simulating click on:", mostRecentAnime.textContent); // Debug log
+            mostRecentAnime.click();
+        } else {
+            console.log("No anime button found");
+        }
+    }
+
+
 
     // Update status text
     const statusText = document.getElementById("status");

@@ -126,6 +126,7 @@ function setBackground(anime = null) {
 
 
 
+
     // Update status text
     const statusText = document.getElementById("status");
     statusText.textContent = tiledMode
@@ -148,6 +149,10 @@ function setBackground(anime = null) {
 
 function toggleTiledBackground() {
     tiledMode = !tiledMode;
+    const animeButtons = document.querySelectorAll(".anime-button, .close-button, .anime-wrapper");
+    animeButtons.forEach(button => {
+        button.style.opacity = tiledMode ? "0%" : "100%";
+    });
     document.getElementById("toggle-background-mode").textContent = tiledMode ? "Switch to Single Image" : "Switch to Tiled Mode";
 
     if (tiledMode) {

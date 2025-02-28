@@ -8,6 +8,31 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.background-image {
+    width: 20vw;
+    /* Keep the grid layout */
+    height: 40vh;
+    background-size: contain;
+    /* Ensures the whole image fits */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Keeps it centered */
+}
+
+
 /* #status {
     position: absolute;
     bottom: 20px;

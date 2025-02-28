@@ -70,7 +70,7 @@ async function fetchAnime() {
             fetchPatternIndex = (fetchPatternIndex + 1) % fetchCounts.length;
 
             if (currentIndex < recentAnime.length) {
-                setTimeout(fetchBatch, 1500); // Wait 3 seconds
+                setTimeout(fetchBatch, 1700); // Wait 1.7 seconds (rate-limitations)
             } else {
                 statusText.textContent = "Select an anime to set as background.";
             }

@@ -70,7 +70,7 @@ async function fetchAnime() {
             fetchPatternIndex = (fetchPatternIndex + 1) % fetchCounts.length;
 
             if (currentIndex < recentAnime.length) {
-                setTimeout(fetchBatch, 3000); // Wait 3 seconds
+                setTimeout(fetchBatch, 1500); // Wait 3 seconds
             } else {
                 statusText.textContent = "Select an anime to set as background.";
             }
@@ -86,58 +86,43 @@ async function fetchAnime() {
 let tiledMode = false;
 let allBackgrounds = [];
 
+const backgroundContainer = document.getElementById("background-container");
+
 function setBackground(anime = null) {
+    backgroundContainer.innerHTML = ""; // Clear previous images
+
     if (!tiledMode && anime) {
-        // Reset backgroundPosition in single image mode
-        document.body.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
-        document.body.style.backgroundPosition = ""; // Reset position
-        document.body.style.backgroundSize = "auto 80vh";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundColor = "black";
+        // Single image mode
+        const imgDiv = document.createElement("div");
+        imgDiv.className = "background-image";
+        imgDiv.style.backgroundImage = `url(${anime.images.jpg.large_image_url})`;
+        imgDiv.style.backgroundPosition = ""; // Reset position
+        imgDiv.style.width = "30vw";
+        imgDiv.style.height = "60vh";
+        imgDiv.style.backgroundRepeat = "no-repeat";
+        imgDiv.style.backgroundColor = "black";
+        backgroundContainer.appendChild(imgDiv);
     } else if (tiledMode && allBackgrounds.length > 0) {
-        // Use at most 10 images
-        const selectedImages = allBackgrounds.slice(0, 10);
-
-        // Set up a 2-row x 5-column grid
-        document.body.style.backgroundImage = selectedImages.map(url => `url(${url})`).join(", ");
-        document.body.style.backgroundSize = "20% 50%"; // 5 columns, 2 rows
-
-        // Background positions for 2 rows x 5 columns
-        document.body.style.backgroundPosition = [
-            "10% 10%", "30% 10%", "50% 10%", "70% 10%", "90% 10%", // Top row
-            "10% 110%", "30% 110%", "50% 110%", "70% 110%", "90% 110%" // Bottom row
-        ].slice(0, selectedImages.length).join(", ");
-
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundColor = "black";
+        // Multi-image mode (grid)
+        allBackgrounds.slice(0, 10).forEach(url => {
+            const imgDiv = document.createElement("div");
+            imgDiv.className = "background-image";
+            imgDiv.style.backgroundImage = `url(${url})`;
+            backgroundContainer.appendChild(imgDiv);
+        });
     }
 
-    // Hide/show generated title buttons & "X" buttons
-    const animeButtons = document.querySelectorAll(".anime-button, .close-button, .anime-wrapper");
 
-    // Hide or show buttons
-    animeButtons.forEach(button => {
-        if (tiledMode) {
-            button.style.opacity = "0";
-            button.style.pointerEvents = "none"; // Prevent clicks
-        } else {
-            button.style.opacity = "1";
-            button.style.pointerEvents = "auto"; // Re-enable clicks
-        }
-    });
-
-
-
-    // If switching back to single mode, auto-select the most recent anime
-    if (!tiledMode && allBackgrounds.length > 0) {
-        const mostRecentAnime = document.querySelector(".anime-button"); // First anime button
-        if (mostRecentAnime) {
-            console.log("Simulating click on:", mostRecentAnime.textContent); // Debug log
-            mostRecentAnime.click();
-        } else {
-            console.log("No anime button found");
-        }
-    }
+    // // If switching back to single mode, auto-select the most recent anime
+    // if (!tiledMode && allBackgrounds.length > 0) {
+    //     const mostRecentAnime = document.querySelector(".anime-button"); // First anime button
+    //     if (mostRecentAnime) {
+    //         console.log("Simulating click on:", mostRecentAnime.textContent); // Debug log
+    //         mostRecentAnime.click();
+    //     } else {
+    //         console.log("No anime button found");
+    //     }
+    // }
 
 
 

@@ -8,13 +8,28 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
-/* #status {
-    position: absolute;
-    bottom: 20px;
+#header {
+    position: fixed;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-} */
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    /* Ensures centering behaves properly */
+}
+
+#generation {
+    position: fixed;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* Ensures centering behaves properly */
+}
 
 .container {
     margin-top: 50px;
@@ -42,7 +57,7 @@ body {
     text-decoration: none;
     font-size: 15px;
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 80px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -52,13 +67,9 @@ body {
     color: black;
 }
 
-#animeName {
+#characterName {
     border-radius: 5px;
     border: none;
-}
-
-#header {
-    border-radius: 5px;
 }
 
 input,
@@ -90,21 +101,4 @@ button {
 button:hover {
     background-color: plum;
     color: black;
-}
-
-.close-button {
-    font-size: 16px;
-    color: white;
-    background-color: crimson;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
-
-.close-button:hover {
-    background-color: darkred;
 }

@@ -197,7 +197,7 @@ function hideMAL() {
         document.getElementById("header").style.color = "black";
         document.getElementById("header").style.padding = "10px 20px";
         document.getElementById("header").style.fontSize = "24px";
-        document.getElementById("header").style.width = "20%";
+        document.getElementById("header").style.width = "25%";
         document.getElementById("generate-btn").hidden = false;
         document.getElementById("toggle-background-mode").hidden = false;
         animeButtons.forEach(button => {
@@ -391,7 +391,6 @@ if (HUDToggle) {
 }
 
 function hideHUD() {
-    let searchBar = document.getElementById("searh")
     if (HUD_shown) {
         HUDToggle.textContent = "Bookmarks: HIDDEN";
     } else {

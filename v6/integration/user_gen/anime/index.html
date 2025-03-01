@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Background Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><span id="header">Anime Background Generator</span></h1>
+        <input type="text" id="animeName" placeholder="Enter anime">
+        <span id="generate-btn"><button onclick="fetchAnime()">Generate Background</button></span>
+        <p id="status"></p>
+        <div id="buttonContainer"></div> <!-- Added this for anime buttons -->
+    </div>
+    <div>
+        <button id="btn-toggle">Prompt: SHOWN</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

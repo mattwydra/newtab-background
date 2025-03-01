@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAL Background Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><span id="header">MyAnimeList Background Generator</span></h1>
+        <input type="text" id="username" placeholder="Enter MAL Username">
+        <span id="generate-btn"><button onclick="fetchAnime()">Generate Background</button></span>
+        <button id="toggle-background-mode" onclick="toggleTiledBackground()">Switch to Tiled Mode</button>
+        <div id="background-container"></div>
+        <p id="status"></p>
+        <div id="buttonContainer"></div> <!-- Added this for anime buttons -->
+    </div>
+    <div>
+        <button id="MAL-toggle">MAL Prompt: SHOWN</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,11 @@
 
 <body>
     <div class="container">
+
+        <div>
+            <button id="switch-link" onmouseover="changeText()" onmouseout="resetText()">STYLE: anime character</button>
+        </div>
+
         <h1><span id="header">Character Background Generator</span></h1>
         <input type="text" id="characterName" placeholder="Enter character">
         <span id="generate-btn"><button onclick="fetchAnime()">Generate Background</button></span>
@@ -19,6 +24,24 @@
     <div>
         <button id="btn-toggle">Prompt: SHOWN</button>
     </div>
+
+    <script>
+        const button = document.getElementById("switch-link");
+        const originalText = button.innerText; // Store original text
+
+        button.addEventListener("click", onclick => {
+            window.location.href = "../../index.html";
+        });
+
+        function changeText() {
+            button.innerText = "STYLE: Change style?";
+        }
+
+        function resetText() {
+            button.innerText = originalText;
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
 

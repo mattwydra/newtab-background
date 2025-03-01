@@ -17,7 +17,7 @@ async function fetchAnime() {
 
         const anime = data.data[0]; // Get the first anime result
         // Get anime image
-        const animeImageUrl = anime.images.jpg.image_url;
+        const animeImageUrl = anime.images.jpg.large_image_url;
 
         // Set the anime's image as the background
         document.body.style.backgroundImage = `url(${animeImageUrl})`;

@@ -65,6 +65,10 @@
         const button = document.getElementById("switch-link");
         const originalText = button.innerText; // Store original text
 
+        button.addEventListener("click", onclick => {
+            window.location.href = "../index.html";
+        });
+
         function changeText() {
             button.innerText = "STYLE: Change style?";
         }

@@ -68,49 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
         custom: JSON.parse(localStorage.getItem("customSites")) || []
     };
 
-    // Potential future elegant solution (needs fixing):
-    /*
-    function renderHelper(presetNum) {
-        switch (presetNum) {
-            case 1:
-                renderSites("productivity");
-                break;
-            case 2:
-                renderSites("gaming");
-                break;
-            case 3:
-                renderSites("media");
-                break;
-            case 4:
-                renderSites("custom");
-                break;
-            default:
-                topSitesContainer.innerHTML = "";
-                predefinedSites.forEach(site => {
-                    const link = document.createElement("a");
-                    link.href = site.url;
-                    link.className = "top-site";
-
-                    // Create image element safely
-                    const img = document.createElement("img");
-                    img.src = `https://www.google.com/s2/favicons?sz=64&domain=${site.url}`;
-                    img.alt = "";
-
-                    // Create span for text safely
-                    const span = document.createElement("span");
-                    span.textContent = site.title; // Prevents unwanted HTML execution
-
-                    // Append elements to the link
-                    link.appendChild(img);
-                    link.appendChild(span);
-
-                    // Append link to the container
-                    topSitesContainer.appendChild(link);
-                });
-        }
-    } 
-    */
-
     function renderSites(category) {
         topSitesContainer.replaceChildren(); // Clears existing elements safely
 

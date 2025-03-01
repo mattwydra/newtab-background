@@ -10,6 +10,9 @@
 
 <body>
     <div class="container">
+        <div>
+            <button id="switch-link" onmouseover="changeText()" onmouseout="resetText()">STYLE: MAL profile</button>
+        </div>
         <h1><span id="header">MyAnimeList Background Generator</span></h1>
         <input type="text" id="username" placeholder="Enter MAL Username">
         <span id="generate-btn"><button onclick="fetchAnime()">Generate Background</button></span>
@@ -21,6 +24,24 @@
     <div>
         <button id="MAL-toggle">MAL Prompt: SHOWN</button>
     </div>
+
+    <script>
+        const button = document.getElementById("switch-link");
+        const originalText = button.innerText; // Store original text
+
+        button.addEventListener("click", onclick => {
+            window.location.href = "../index.html";
+        });
+
+        function changeText() {
+            button.innerText = "STYLE: Change style?";
+        }
+
+        function resetText() {
+            button.innerText = originalText;
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
 

@@ -2,18 +2,18 @@
 
 This is a repo to house my code for a future firefox extension that I'm creating. The eventual version will support significant customization for your firefox newtab window. This is a passion project, so most of the features are oriented towards things that I'm passionate about, unfortunately. However, I will include detailed descriptions on how to change the code (what to change/where) for those of you who would like to change any features! The search feature works, but I'm currently looking into ways to simulate the top sites functionality on [GitHub pages](https://mattwydra.github.io/newtab-background/). If that's unsuccessful, then I will create video demos for each version. 
 
-**Current version: [5.4](https://mattwydra.github.io/newtab-background/v5/v5d/newtab.html)**
+**Current version: [6.6](https://mattwydra.github.io/newtab-background/v6/integration/base_code/newtab.html)**
 
 ---
 
 ### Phase 1: Basic Random Background on New Tab
 
-- [Version 1](https://mattwydra.github.io/newtab-background/v1/newtab.html)
+- **[Version 1]**(https://mattwydra.github.io/newtab-background/v1/newtab.html)
 - Every time you open a new tab, a random image is selected from a folder or list.
 
 ### Phase 2: Background Rotation (Auto-Switch Every 10s)
 
-- [Version 2.1](https://mattwydra.github.io/newtab-background/v2/newtab.html)
+- **[Version 2.1]**(https://mattwydra.github.io/newtab-background/v2/newtab.html)
 - Background image changes every 10 seconds.
 - Optimization (2b): Only change if the tab is open (so it doesn't kill RAM).
 
@@ -37,18 +37,34 @@ This is a repo to house my code for a future firefox extension that I'm creating
 - **[Version 5.1](https://mattwydra.github.io/newtab-background/v5/v5a/newtab.html)**: On new tab load, generate a hopecore image + quote.
 - **[Version 5.2](https://mattwydra.github.io/newtab-background/v5/v5b/newtab.html)**: Button to manually generate a new hopecore.
 - **[Version 5.3](https://mattwydra.github.io/newtab-background/v5/v5c/newtab.html)**: Auto-regenerate hopecore every 10 seconds.
-- **[Version 5.4](https://mattwydra.github.io/newtab-background/v5/v5d/newtab.html) (Partial Implementation)**: Add more sites to the presets, allow for adding/removing from presets, and will support more options:
+- **[Version 5.4](https://mattwydra.github.io/newtab-background/v5/v5d/newtab.html)**: Add more sites to the presets, allow for adding/removing from presets, and will support more options:
    - hide bookmarks 
-   - hide individual elements (search bar, sites, etc.)
-   - add images (or videos/gifs, etc.)
    - add quotes
 
 ### Phase 6: Deep Personalization (MAL & Game Data)
 
-- (6a): Fetch recent anime from MAL profile and use images from most recently watched shows.
-- (6b): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
-- (6c): Select from the most recent 3-5 anime/games (toggle buttons).
-- (6d): Automatically rotate between all images (recent anime, games, hopecore, etc.).
+**PRE-INTEGRATION:**
+- Create working versions of the following features, separate from the main code base (pre-integration)
+- **[Version 6.1](https://mattwydra.github.io/newtab-background/v6/pre_integration/v1/index.html):** Fetch 3 recently watched anime from MAL profile and allow user to select their background based on the results.
+- **[Version 6.2](https://mattwydra.github.io/newtab-background/v6/pre_integration/v2/index.html):** Handle rate-limitations to generate 10 buttons for 10 most recently watched anime, and make buttons in English.
+- **[Version 6.3](https://mattwydra.github.io/newtab-background/v6/pre_integration/v3/index.html):** Enhanced styling for all buttons, and included a button to remove certain results from batch of fetched anime.
+- **[Version 6.4](https://mattwydra.github.io/newtab-background/v6/pre_integration/v4/index.html):** Allow for user to choose from 3 versions: MAL profile, choice character, or choice anime.
+- **[Version 6.5](https://mattwydra.github.io/newtab-background/v6/pre_integration/v5/index.html):** Create new 'tiled' option to make the background a collage of all 10 most recently watched anime.
+
+**INTEGRATION:**
+- **[Version 6.5](https://mattwydra.github.io/newtab-background/v6/integration/base_code/newtab.html):** Integrate phase 6 features into main codebase
+
+### Phase 7: Refactoring and clean up
+- (7a): Centralize re-used code (create packages or classes to call/reference)
+- (7b): Fix certain naming schemes for readability
+- (7c): Fix styling for mobile use (no idea how I'll do this)
+
+### Phase 8: More features
+- (8a): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
+- (8b): Functionality to automatically rotate between all images (recent anime, games, hopecore, etc.).
+- (8c): Enhanced features for all background generation options:
+	- For anime gen, options to generate based on favorite shows/characters on MAL profile
+ 	- For hopecore gen: option to hide individual elements (search bar, sites, etc.) and option to add images (or videos/gifs, etc.)
 
 ## Other information:
 

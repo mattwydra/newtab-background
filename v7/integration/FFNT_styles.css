@@ -1,0 +1,190 @@
+body {
+    background-color: black;
+    color: aliceblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 90px;
+}
+
+#result img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+#result div {
+    word-wrap: break-word;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: rgb(65, 65, 65);
+    color: lavender;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: plum;
+    color: black;
+}
+
+#custom-title {
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+    padding: 6px 10px;
+}
+
+#custom-url {
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+    padding: 6px 10px;
+}
+
+#hopecore-link {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+}
+
+#hopecore-link:hover {
+    background-color: black;
+    color: plum;
+}
+
+#auto-toggle {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 50px;
+    right: 80px;
+}
+
+#auto-toggle:hover {
+    background-color: black;
+    color: plum;
+}
+
+#HUD-toggle {
+    background: rgb(65, 65, 65);
+    color: lavender;
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#HUD-toggle:hover {
+    background-color: plum;
+    color: black;
+}
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #121212;
+    overflow: hidden;
+}
+
+/* 🖼 Background Image */
+.newtab-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 🔎 Search Bar */
+.search-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    display: flex;
+    background: rgb(31, 31, 31);
+    color: rgb(196, 196, 196);
+    width: 800px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+/* ⭐ Top Sites */
+.top-sites-wrapper {
+    width: 80%;
+    max-width: 855px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    justify-items: center;
+}
+
+#top-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    max-width: 900px;
+}
+
+.top-site {
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    background: rgb(31, 31, 31);
+    padding: 6px;
+    border-radius: 12px;
+    text-align: center;
+    width: 70px;
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.top-site:hover {
+    background: rgb(196, 196, 196);
+    color: black;
+}
+
+.top-site img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}

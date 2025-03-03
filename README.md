@@ -52,19 +52,19 @@ This is a repo to house my code for a future firefox extension that I'm creating
 - **[Version 6.5](https://mattwydra.github.io/newtab-background/v6/pre_integration/v5/index.html):** Create new 'tiled' option to make the background a collage of all 10 most recently watched anime.
 
 **INTEGRATION:**
-- **[Version 6.5](https://mattwydra.github.io/newtab-background/v6/integration/base_code/newtab.html):** Integrate phase 6 features into main codebase
+- **[Version 6.6](https://mattwydra.github.io/newtab-background/v6/integration/base_code/newtab.html):** Integrate phase 6 features into main codebase
 
-### Phase 7: Refactoring and clean up
-- (7a): Centralize re-used code (create packages or classes to call/reference)
-- (7b): Fix certain naming schemes for readability, and update presets for top-sites
-- (7c): Fix styling for mobile use (no idea how I'll do this)
+### Phase 7: Refactoring and clean up (in development)
+- (7a): Centralize re-used code (create packages or classes to call/reference).
+- (7b): Fix certain naming schemes for readability, and update presets for top-sites.
+- (7c): Fix styling for mobile use if possible.
 
 ### Phase 8: More features
 - (8a): Link different platforms (MAL, Steam, etc.), adding a button to choose between recently played games or anime.
 - (8b): Functionality to automatically rotate between all images (recent anime, games, hopecore, etc.).
 - (8c): Enhanced features for all background generation options:
-	- For anime gen, options to generate based on favorite shows/characters on MAL profile
- 	- For hopecore gen: option to hide individual elements (search bar, sites, etc.) and option to add images (or videos/gifs, etc.)
+	- For anime gen, options to generate based on favorite shows/characters on MAL profile.
+ 	- For hopecore gen: option to hide individual elements (search bar, sites, etc.) and option to add images (or videos/gifs, etc.).
 
 ## Other information:
 

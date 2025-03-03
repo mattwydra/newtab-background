@@ -56,7 +56,7 @@ This is a repo to house my code for a future firefox extension that I'm creating
 
 ### Phase 7: Refactoring and clean up
 - (7a): Centralize re-used code (create packages or classes to call/reference)
-- (7b): Fix certain naming schemes for readability
+- (7b): Fix certain naming schemes for readability, and update presets for top-sites
 - (7c): Fix styling for mobile use (no idea how I'll do this)
 
 ### Phase 8: More features

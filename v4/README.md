@@ -1,7 +1,7 @@
 # **Phase 4: Choice of Websites**
 ### **Objective:**
-- **[v4a](https://mattwydra.github.io/newtab-background/v4/v4a/newtab.html)**Allow users to select different categories (Productivity, Gaming, Media, Custom).
-- **[v4b](https://mattwydra.github.io/newtab-background/v4/v4b/newtab.html)**Enable users to add custom bookmarks.
+- **[v4a](https://mattwydra.github.io/newtab-background/v4/v4a/newtab.html)** Allow users to select different categories (Productivity, Gaming, Media, Custom).
+- **[v4b](https://mattwydra.github.io/newtab-background/v4/v4b/newtab.html)** Enable users to add custom bookmarks.
 
 ### **Implementation:**
 - Add buttons for category selection.

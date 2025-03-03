@@ -261,27 +261,6 @@ if (generateButton) {
     console.error("Generate button not found!");
 }
 
-// // Select the switch bg gen button
-// const switchButton = document.getElementById("switch-link");
-
-// // Attach event listeners
-// if (switchButton) {
-//     switchButton.addEventListener("click", () => {
-//         autogen = !autogen;
-//         if (autogen) {
-//             autoGenerate();
-//             switchButton.textContent = "STYLE: hopecore";
-//             switchButton.style
-//         }
-//         else {
-//             switchButton.textContent = "STYLE: anime";
-//             clearInterval(autoGenRefreshId);
-//         }
-//     });
-// } else {
-//     console.error("Switch button not found!");
-// }
-
 async function autoGenerate() {
     autoGenRefreshId = setInterval(generateHopecore, 10000);
 }

@@ -1,4 +1,6 @@
 ## **Phase 6: Deep Personalization (MAL & Game Data)**
+(zips coming soon)
+
 ### **Objective:**
 - Fetch and display recent anime from a user's MAL profile.
 - Integrate Steam or other game tracking services.

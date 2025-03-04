@@ -27,3 +27,8 @@ This version of the custom new tab page displays top sites while the background 
 ## Customization
 - Modify `styles.css` to change the colors in the animation sequence.
 - Adjust `newtab.js` if additional features are needed.
+
+# Firefox Validation:
+I'm still quite new to writing and publishing browser extensions, so use these at your own risk. However, I have tested all of the zips by uploading them to Firefox and running them through the Firefox validator. I can show the proof that they are considered safe (without errors and without warnings):
+
+![](v3a_validation.png)

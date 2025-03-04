@@ -102,3 +102,35 @@ Steps:
 }
 
 ```
+
+
+## Note about security:
+I'm still quite new to writing and publishing browser extensions, so use these at your own risk. However, I have tested all of the zips by uploading them to Firefox and running them through the Firefox validator. I can show the proof that they are considered safe (without errors and without warnings), and have for each iteration. The validation images can be found in each version's respective README.
+
+## Further security testing
+Due to the fact that I have little experience writing safe code, I've been researching good principles for ensuring my code is safe. The methods I have found for firefox extensions are below, and I will be updating each project's progress with these steps as I get through them. 
+
+### **1. Permissions Audit**  
+- **Minimize permissions**: ensuring that the `manifest.json` doesn't request more permissions than necessary.
+- **Avoid `unsafe-eval`**: ensuring that the extension uses `content_security_policy` (CSP), and make sure it doesn’t allow `unsafe-eval` or `unsafe-inline`, which can lead to injection vulnerabilities.  
+- **Background scripts**: ensure background scripts aren't overly permissive with what they interact with.
+
+### **2. Content Script Security**  
+- **Avoid direct DOM manipulation from messages**: Make sure scripts don't blindly execute commands from messages (`message passing` can be an attack vector).
+- **Sanitize inputs**: When the extension takes input (e.g., user text, URLs, API responses), sanitize it to prevent script injections.  
+
+### **3. API Calls & Data Handling**  
+- **Verify URLs in API requests**: Ensure the extension is only making requests to trusted endpoints.  
+- **No sensitive data storage**: Avoid storing API keys, passwords, or tokens in localStorage or cookies.  
+- **Use HTTPS**: When the extension interacts with external services, make sure all URLs are HTTPS.
+
+### **4. Code Integrity & Updates**  
+- **Check dependencies**: Ensure third-party libraries are from trusted sources and kept up to date.  
+- **Sign your updates**: Sign any updates to the extension for use outside of Firefox store
+
+### **5. Manual Testing**  
+- Install the extension on a fresh Firefox profile and use it in different scenarios to see if anything unexpected happens.  
+- Test with **strict CSP settings** to ensure security policies aren't too loose.
+
+### **6. Final Check: Mozilla’s AMO Review**  
+Since I'm uploading these add-ons to Mozilla Add-ons (AMO), my extensions will go through a review process. While the automated scan is good, their **manual review** is even better at catching issues. I will leave a note as to whether each version gets approved or not in each version's respective README.

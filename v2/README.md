@@ -21,3 +21,9 @@ function startBackgroundRotation() {
 
 document.addEventListener("DOMContentLoaded", startBackgroundRotation);
 ```
+
+
+# Firefox Validation:
+I'm still quite new to writing and publishing browser extensions, so use these at your own risk. However, I have tested all of the zips by uploading them to Firefox and running them through the Firefox validator. I can show the proof that they are considered safe (without errors and without warnings):
+
+![](v2_validation.png)

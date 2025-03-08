@@ -81,8 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderSites(category) {
-        // const topSitesContainer = document.getElementById("top-sites");
-        topSitesContainer.innerHTML = "";
+        topSitesContainer.replaceChildren(); // Clears existing elements safely
 
         categories[category].forEach(site => {
             const link = document.createElement("a");

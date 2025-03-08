@@ -66,14 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderSites(category) {
-        // const topSitesContainer = document.getElementById("top-sites");
-        topSitesContainer.innerHTML = "";
+        topSitesContainer.replaceChildren(); // Clears existing elements safely
 
         categories[category].forEach(site => {
             const link = document.createElement("a");
             link.href = site.url;
             link.className = "top-site";
-            link.innerHTML = `<img src="https://www.google.com/s2/favicons?sz=64&domain=${site.url}" alt=""> <span>${site.title}</span>`;
+
+            // Create image element safely
+            const img = document.createElement("img");
+            img.src = `https://www.google.com/s2/favicons?sz=64&domain=${site.url}`;
+            img.alt = "";
+
+            // Create span for text safely
+            const span = document.createElement("span");
+            span.textContent = site.title; // Prevents unwanted HTML execution
+
+            // Append elements to the link
+            link.appendChild(img);
+            link.appendChild(span);
+
+            // Append link to the container
             topSitesContainer.appendChild(link);
         });
     }

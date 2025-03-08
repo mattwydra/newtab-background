@@ -39,3 +39,7 @@ This is an improved version of the custom new tab page, featuring categorized si
 
 This version refines the user experience while keeping the core functionality of Version A intact, making it a more user-friendly and flexible new tab replacement.
 
+# Firefox Validation:
+I'm still quite new to writing and publishing browser extensions, so use these at your own risk. However, I have tested all of the zips by uploading them to Firefox and running them through the Firefox validator. I can show the proof that they are considered safe (without errors and without warnings):
+
+![](v4b_validation.png)
